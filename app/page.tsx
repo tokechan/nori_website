@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { projects } from '../data/projects'
-import { Instagram, Twitter, Youtube, Vimeo } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -13,12 +12,12 @@ export default function Home() {
               HELLO<br />NICE TO MEET YOU
             </h1>
             <p className="text-xl mb-8">
-              Hello!!! I'm so happy you're here.<br />
+              Hello!!! I&apos;m so happy you&apos;re here.<br />
               I am a freelance creative director,content creator,
               motion designer.<br />
-              Also founder of "UNLABELING"
+              Also founder of &quot;UNLABELING&quot;
               Let me join your journey of business
-              Let's work together🤝
+              Let&apos;s work together🤝
             </p>
             <div className="flex gap-4">
               <Link
@@ -82,7 +81,7 @@ export default function Home() {
               className="object-contain animate-float"
             />
           </div>
-          <h2 className="text-5xl font-serif mb-8">Let's make us !!!</h2>
+          <h2 className="text-5xl font-serif mb-8">Let&apos;s make us !!!</h2>
           <Link
             href="/contact"
             className="inline-block px-8 py-3 rounded-full bg-[#c2c95b] text-black hover:bg-opacity-90 transition"
