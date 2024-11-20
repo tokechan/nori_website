@@ -11,7 +11,7 @@ export default function Header() {
         <nav className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-serif">
           <Image
-            src="/Images/logo.png"
+            src="/images/logo.png"
             alt="site logo"
             width={50}
             height={50}
