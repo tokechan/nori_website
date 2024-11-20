@@ -28,7 +28,7 @@ export default function Footer() {
           <div>
             <p className="mb-4">Shonan, Kanagawa </p>
             <div className="flex gap-4">
-              <Link href="#" className="hover:opacity-70">
+              <Link href="https://www.instagram.com/unlabeling___/" className="hover:opacity-70">
                 <Instagram className="w-5 h-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
