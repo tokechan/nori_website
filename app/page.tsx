@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { projects } from '../data/projects'
 import { Instagram, Twitter, Youtube, Vimeo } from 'lucide-react'
 
 export default function Home() {
@@ -49,6 +50,25 @@ export default function Home() {
         <h2 className="text-4xl font-serif mb-12">The Latest</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* プロジェクトのマッピングはここに */}
+          {projects.slice(0, 3).map((project) => (
+        <Link
+          key={project.id}
+          href={project.link}
+          className="group block"
+        >
+          <div className="relative aspect-[4/3] mb-4 overflow-hidden">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover transition group-hover:scale-105"
+            />
+          </div>
+          <h3 className="text-xl font-serif underline-offset-4 group-hover:underline">
+            {project.title}
+          </h3>
+        </Link>
+      ))}
         </div>
       </section>
 
@@ -56,8 +76,8 @@ export default function Home() {
         <div className="max-w-2xl mx-auto">
           <div className="relative h-40 mb-8">
             <Image
-              src="/images/magic-wand.svg"
-              alt="Magic wand illustration"
+              src="/images/footer_image.jpg"
+              alt="panorama image"
               fill
               className="object-contain animate-float"
             />

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Instagram, Twitter, Youtube } from 'lucide-react'
 
 export default function Footer() {
@@ -7,9 +8,15 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <Link href="/" className="text-2xl font-serif">
-              YOURNAME
-            </Link>
+          <Link href="/" className="text-2xl font-serif">
+          <Image
+            src="/Images/logo.png"
+            alt="site logo"
+            width={50}
+            height={50}
+            className="mr-4"
+            />
+          </Link>
           </div>
           <div>
             <nav className="space-y-4">
