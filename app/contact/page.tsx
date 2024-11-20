@@ -13,7 +13,7 @@ export default function ContactPage() {
   };
 
   const validateInput = () => {
-    const newErrors: Record<string, string> = {};
+    const newErrors: { name: string; email: string; message: string } = { name: '', email: '', message: '' };
     if (!formData.name) newErrors.name = '名前を入力してください';
     if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
       newErrors.email = '有効なメールアドレスを入力してください';
