@@ -15,12 +15,12 @@ export default function Page() {
             I am NORIKO.
             </h2>
           <p className="text-xl mb-8">
-            I'm so happy you're here.<br />
+            I&apos;m so happy you&apos;re here.<br />
             I am a freelance creative director,content creator,
             motion designer.<br />
-            Also founder of "UNLABELING"
+            Also founder of &quot;UNLABELING&quot;
             Let me join your journey of business
-            Let's work together🤝
+            Let&apos;s work together🤝
           </p>
         </div>
         <div className="relative aspect-square">
