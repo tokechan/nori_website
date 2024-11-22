@@ -15,14 +15,14 @@ export default function Home() {
               <div className="space-y-40">
                 
                   <div>
-                  <h1 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">
+                  <h1 className="text-2xl md:text-3xl font-bold font-serif text-center mb-12">
                     UNLABELING CREATIVE STUDIO
                   </h1>
                   <HeroCircle />
                   </div>
 
                   <div className="flex justify-center">
-                    <h2 className="text-3xl md:text-4xl font-serif  text-left mb-12">
+                    <h2 className="text-2xl md:text-3xl font-serif  text-left mb-12">
                       人もモノも見え方、捉え方、価値観は、<br />
                       いくつもあって、もっと自由であっていい<br />
                       そんな想像力の溢れる<br />

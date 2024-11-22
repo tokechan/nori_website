@@ -34,9 +34,9 @@ export default function HeroCircle() {
       >
         <div className="absolute inset-0 backdrop-blur-sm rounded-full" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-          <p className="text-3xl md:text-5xl mb-4 font-extrabold">もっと、想いは伝わる</p>
-          <p className="text-3xl md:text-5xl mb-4 font-extrabold">もっと、可能性は広がる</p>
-          <p className="text-3xl md:text-5xl mb-4 font-extrabold">もっと、価値観は繋がる</p>
+          <p className="text-3xl md:text-4xl mb-4 font-extrabold">もっと、想いは伝わる</p>
+          <p className="text-3xl md:text-4xl mb-4 font-extrabold">もっと、可能性は広がる</p>
+          <p className="text-3xl md:text-4xxl mb-4 font-extrabold">もっと、価値観は繋がる</p>
         </div>
       </div>
     </div>
