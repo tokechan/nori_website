@@ -10,10 +10,10 @@ export default function Footer() {
           <div>
           <Link href="/" className="text-2xl font-serif">
           <Image
-            src="/images/logo.png"
+            src="/images/logo_demo.svg"
             alt="site logo"
-            width={50}
-            height={50}
+            width={120}
+            height={120}
             className="mr-4"
             />
           </Link>
