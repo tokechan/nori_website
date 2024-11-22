@@ -1,52 +1,48 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { projects } from '../data/projects'
+import HeroCircle from '../components/ui/hero-circle'
+
 
 export default function Home() {
   return (
     <div className="container mx-auto px-4">
       <section className="py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* new feature */}
+        <div className="grid grid-cols-1 md:grid-cols2 gap-12 items-center">
           <div>
-            <h1 className="text-6xl font-serif leading-tight mb-8">
-              HELLO<br />NICE TO MEET YOU
-            </h1>
-            <p className="text-xl mb-8">
-              Hello!!! I&apos;m so happy you&apos;re here.<br />
-              I am a freelance creative director,content creator,
-              motion designer.<br />
-              Also founder of &quot;UNLABELING&quot;
-              Let me join your journey of business
-              Let&apos;s work together🤝
-            </p>
-            <div className="flex gap-4">
-              <Link
-                href="/projects"
-                className="px-8 py-3 rounded-full bg-[#e9c7d0] text-black hover:bg-opacity-90 transition"
-              >
-                PROJECTS
-              </Link>
-              <Link
-                href="/contact"
-                className="px-8 py-3 rounded-full bg-[#c2c95b] text-black hover:bg-opacity-90 transition"
-              >
-                CONTACT
-              </Link>
-            </div>
+            <main className="min-h-screen">
+              <div className="space-y-40">
+                
+                  <div>
+                  <h1 className="text-3xl md:text-4xl font-bold font-serif text-center mb-12">
+                    UNLABELING CREATIVE STUDIO
+                  </h1>
+                  <HeroCircle />
+                  </div>
+
+                  <div className="flex justify-center">
+                    <h2 className="text-3xl md:text-4xl font-serif  text-left mb-12">
+                      人もモノも見え方、捉え方、価値観は、<br />
+                      いくつもあって、もっと自由であっていい<br />
+                      そんな想像力の溢れる<br />
+                      優しい世界をつくっていけるように<br />
+                      無意識に付けられてしまっている<br />
+                      ラベルをはがしていくことに注力し<br />
+                      固定概念に縛られない<br />
+                      新しい表現づくりの追求を<br />
+                      していきたいという想いから<br />
+                      『UNLABELING』と名付けました。<br />
+                    </h2>
+                  </div>
+                </div>
+            </main>
           </div>
-          <div className="relative aspect-square">
-            <Image
-              src="/images/main_image.jpeg"
-              alt="Creative illustration"
-              fill
-              className="object-contain animate-float"
-            />
-          </div>
-        </div>
+        </div> 
       </section>
 
       <section className="py-24">
-        <h2 className="text-4xl font-serif mb-12">The Latest</h2>
+        <h2 className="text-3xl md:text-4xl font-serif mb-12">The Latest</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* プロジェクトのマッピングはここに */}
           {projects.slice(0, 3).map((project) => (
