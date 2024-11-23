@@ -49,31 +49,31 @@ export default function Page() {
           height={450}
           className="mb-8"
         />
-      <h1 className="text-2xl font-bold mb-6">WORKS+</h1>
-      <div className="w-full max-w-md p-8">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="relateive">
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 bg-transparent border-b border-gray-300 focus:border-gray-900 focus:outline-none transition-colors"
-              placeholder="パスワードを入力..."
-              required
-            />
-            <button 
-              type="submit"
-              disabled={isLoading}
-              className="absolute right-0 top-1/2 -translate-y-1/2 px-6 py-2 text-gray-600 hover:text-gray-900 disabled:opacity-50 transition-colors"
-            >
-              送信
-            </button>
-          </div>
-          {error && (
-            <p className="text-red-500 text-sm text-center">{error}</p>
-          )}              
-        </form>
-      </div>
+        <h1 className="text-2xl font-bold mb-6">WORKS+</h1>
+        <div className="w-full max-w-md p-8">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="relateive">
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full px-4 py-2 bg-transparent border-b border-gray-300 focus:border-gray-900 focus:outline-none transition-colors"
+                placeholder="パスワードを入力..."
+                required
+              />
+              <button 
+                type="submit"
+                disabled={isLoading}
+                className="absolute right-0 top-1/2 -translate-y-1/2 px-6 py-2 text-gray-600 hover:text-gray-900 disabled:opacity-50 transition-colors"
+              >
+                送信
+              </button>
+            </div>
+            {error && (
+              <p className="text-red-500 text-sm text-center">{error}</p>
+            )}              
+          </form>
+        </div>
     </div>
     )
   }
