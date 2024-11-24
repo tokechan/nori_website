@@ -24,11 +24,13 @@ export async function POST(request: Request) {
       return response;
     }
 
+    // パスワードが一致しない場合
     return NextResponse.json(
       { success: false, message: 'パスワードが正しくありません' },
       { status: 401 }
     );
-  } catch (error) {
+  } catch {
+    // サーバーエラーが発生した場合
     return NextResponse.json(
       { success: false, message: 'サーバーエラーが発生しました' },
       { status: 500 }
