@@ -65,7 +65,7 @@ export default function Header() {
               } fixed top-0 left-0 h-full w-full bg-white shadow-md z-50 md:static md:h-auto md:w-auto md:shadow-none md:translate-x-0 transition-transform duration-300 ease-in-out md:transition-none`}
             >
              <ul className="flex flex-col md:flex-row md:items-center md:gap-8 h-full justify-center md:h-auto">
-              {['HOME', 'ABOUT', 'WORKS', 'WORKS+', 'PERSONAL', 'BLOG', 'CONTACT'].map((item) => (
+              {['HOME', 'ABOUT', 'WORKS', 'WORKS_PLUS', 'PERSONAL', 'BLOG', 'CONTACT'].map((item) => (
                 <li key={item} className= "text-center md:text-left">
                   <Link 
                     href={item === 'HOME' ? '/' : `/${item.toLowerCase()}`}
