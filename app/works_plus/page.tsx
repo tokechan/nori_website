@@ -42,7 +42,7 @@ export default function Page() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white">
         <Image
-          src="/Images/logo_demo.svg"
+          src="/images/logo_demo.svg"
           alt="Logo"
           width={450}
           height={450}
