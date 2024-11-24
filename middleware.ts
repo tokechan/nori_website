@@ -14,15 +14,23 @@ export function middleware(request: NextRequest) {
     const authToken = request.cookies.get('auth-token')?.value;
 
     try {
-      if (!authToken) throw new Error('No token found');
+      if (!authToken) {
+        // トークンが見つからない場合は認証ページにリダイレクト
+        return NextResponse.redirect(
+          new URL(`/works_plus/auth?redirect=${encodeURIComponent(pathname)}`, request.url)
+        );
+      }
 
       // トークンを検証
       const decoded = jwt.verify(authToken, process.env.JWT_SECRET!);
       if (!decoded || !(decoded as any).authenticated) {
-        throw new Error('Invalid token');
+        // トークンが無効の場合も認証ページにリダイレクト
+        return NextResponse.redirect(
+          new URL(`/works_plus/auth?redirect=${encodeURIComponent(pathname)}`, request.url)
+        );
       }
-    } catch (err) {
-      // 未認証の場合、認証ページにリダイレクト
+    } catch {
+      // トークンの検証中にエラーが発生した場合もリダイレクト
       return NextResponse.redirect(
         new URL(`/works_plus/auth?redirect=${encodeURIComponent(pathname)}`, request.url)
       );
@@ -33,6 +41,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-    matcher: ['/works_plus/:path*'], // シンプルにパスのみを指定
-  };
-  
+  matcher: ['/works_plus/:path*'], // シンプルにパスのみを指定
+};
