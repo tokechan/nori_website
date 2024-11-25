@@ -15,7 +15,7 @@ export default function Page() {
 
   useEffect(() => {
     const checkAuth = async () => {
-      const token = documet.cookie
+      const token = document.cookie
         .split(';')
         .find((row) => row.startsWith('auth-token='))
         ?.split('=')[1];
@@ -28,7 +28,7 @@ export default function Page() {
 
         try {
           //token varify easy ver
-          const payload = JSON.parse(atob(token.aplit('.')[1]));
+          const payload = JSON.parse(atob(token.split('.')[1]));
           router.push('/auth');
         }
     };
