@@ -30,6 +30,8 @@ export default function Page() {
           //token varify easy ver
           const payload = JSON.parse(atob(token.split('.')[1]));
           router.push('/auth');
+        } catch (error) {
+          
         }
     };
 
