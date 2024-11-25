@@ -31,7 +31,8 @@ export default function Page() {
           const payload = JSON.parse(atob(token.split('.')[1]));
           router.push('/auth');
         } catch (error) {
-          
+          console.error('Error verifying token:', error);
+          setError('認証に失敗しました。');
         }
     };
 
