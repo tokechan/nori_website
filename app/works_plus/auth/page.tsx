@@ -15,6 +15,8 @@ export default function Page() {
     e.preventDefault()
     setIsLoading(true)
     setError('')
+    
+    console.log('送信されるパスワード:', password);
 
     try {
       const response = await fetch('/api/auth', {
@@ -27,7 +29,7 @@ export default function Page() {
 
       if (response.ok) {
         router.push('/works_plus')
-        router.refresh()
+        // router.refresh()
       } else{
         setError('パスワードが正しくありません')
       } 
