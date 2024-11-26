@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { NextRequest } from 'next/server';
-import jwt from 'jsonwebtoken'; // トークン検証に必要
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -23,15 +22,8 @@ export function middleware(request: NextRequest) {
       return redirectToAuthPage(request, pathname);
     }
 
-    // トークンの検証
-    try {
-      const decoded = jwt.verify(authToken, process.env.JWT_SECRET!); // トークンを検証
-      console.log('middleware: token verification successful:', decoded);
-      return NextResponse.next(); // トークンが有効であればそのまま許可
-    } catch (err) {
-      console.log('middleware: token verification failed:', err);
-      return redirectToAuthPage(request, pathname); // 無効なトークンの場合はリダイレクト
-    }
+    //トークン検証は別APIに任せる
+    return NextResponse.rewrite(new URL('/api/validation-token', request.url));
   }
 
   return NextResponse.next(); // 他のルートはそのまま許可
