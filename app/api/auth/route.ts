@@ -38,14 +38,14 @@ export async function POST(request: Request) {
       console.log('Cookie set:', response.cookies.get('auth-token'));
 
       return response;
-    } else {
+    } 
       // パスワードが一致しない場合
       console.log('認証失敗: パスワードが一致しません');
       return NextResponse.json(
         { success: false, message: 'パスワードが正しくありません' },
         { status: 401 }
       );
-    }
+    
   } catch (err) {
     // サーバーエラー時のログ
     console.error('サーバーエラー:', err);
