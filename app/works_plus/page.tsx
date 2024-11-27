@@ -11,7 +11,7 @@ export default function Page() {
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
-  
+  const AUTH_PATH = '/works_plus/auth';
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -22,14 +22,14 @@ export default function Page() {
 
         if (!token) {
           console.log('not auth: redirect to authpage');
-          router.push('/works_plus/auth');
+          router.push(AUTH_PATH);
           return;
         }
 
         try {
           //token varify easy ver
           const payload = JSON.parse(atob(token.split('.')[1]));
-          router.push('/auth');
+          router.push(AUTH_PATH);
         } catch (error) {
           console.error('Error verifying token:', error);
           setError('認証に失敗しました。');
