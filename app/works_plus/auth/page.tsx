@@ -38,14 +38,18 @@ export default function Page() {
       });
 
       if (response.ok) {
-        console.log('auth scussce - page redirect:', redirectTo);
+        console.log('認証成功');
+
         // クッキーが正しく設定されることを確認
         console.log('Cookies before redirect:', document.cookie);
         // リダイレクトを少し遅らせることでミドルウェアのトークンチェックを回避
+        const { redirectTo } = await response.json();
         router.push(redirectTo);// sucessece redirect
       }else {
-        alert('パスワードが正しくありません');
+        console.log('認証失敗');
+        setError('パスワードが正しくありません');
       }
+      setIsLoading(false);
   };
 
     return (
