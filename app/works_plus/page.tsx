@@ -22,7 +22,7 @@ export default function Page() {
 
         if (!token) {
           console.log('not auth: redirect to authpage');
-          router.push('/auth');
+          router.push('/works_plus/auth');
           return;
         }
 
