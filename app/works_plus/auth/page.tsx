@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useEffect} from 'react'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
-import { redirect, useRouter } from 'next/navigation'
+
 
 export default function Page() {
   const [password, setPassword] = useState('')
@@ -19,36 +20,36 @@ export default function Page() {
     if (redirectParam) {
       setRedirectTo(redirectParam)
     }
-  }, [])
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    setError('')
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
     
     console.log('送信されるパスワード:', password);
 
-    try {
       const response = await fetch('/api/auth', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ password }),
-      })
+      });
 
       if (response.ok) {
-        console.log('auth scussce - page redirect:', redirectTo);
-        router.push(redirectTo)//'redirectTo'に基づきリダイレクト
-      } else {
-        const data = await response.json();
-        setError(data.message ||  'パスワードが正しくありません');
-      } 
-    } catch (err) {
-      setError('エラーが発生しました。もう一度お試しください')
-    } finally {
-      setIsLoading(false)
-    }
+        console.log('認証成功');
+
+        // クッキーが正しく設定されることを確認
+        console.log('Cookies before redirect:', document.cookie);
+        // リダイレクトを少し遅らせることでミドルウェアのトークンチェックを回避
+        const { redirectTo } = await response.json();
+        router.push(redirectTo);// sucessece redirect
+      }else {
+        console.log('認証失敗');
+        setError('パスワードが正しくありません');
+      }
+      setIsLoading(false);
   };
 
     return (
