@@ -2,7 +2,7 @@
 
 import { TextField, Button, Typography, styled } from '@mui/material';
 import { useState } from 'react';
-import { supabase } from '@/lib/supabsseClient';
+import { supabase } from '@/lib/supabaseClient';
 
 const StyledTextField = styled(TextField)({
   '& .MuiInput-underline:before': {
