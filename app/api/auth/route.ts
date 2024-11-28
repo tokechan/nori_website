@@ -33,12 +33,18 @@ export async function POST(request: Request) {
       console.log('認証成功');
 
       // JWTトークンの生成
-      const token = jwt.sign({ authenticated: true }, JWT_SECRET, {
-        expiresIn: '24h',
-      });
+      const token = jwt.sign({ authenticated: true }, //ペイロード
+         process.env.JWT_SECRET || '',  //シークレット
+        {
+         expiresIn: '24h', //有効期限
+         algorithm: 'HS256', //アルゴリズム
+        }
+      );
+      console.log('Generated Token:', token);//生成されたトークンを確認
 
       // トークンをCookieに設定
-      const response = NextResponse.json({ success: true });
+      const response = NextResponse.json({ success: true, redirectTo: '/works_plus' });
+
       response.cookies.set('auth-token', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
@@ -46,6 +52,8 @@ export async function POST(request: Request) {
         maxAge: 60 * 60 * 24,
         path: '/',
       });
+
+      return response;// return cookies respons 
 
       return NextResponse.json({ success: true, redirectTo: '/works_plus' });
     } else {
