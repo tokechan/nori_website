@@ -1,73 +1,49 @@
 import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 import jwt from 'jsonwebtoken';
-import { redirect } from 'next/dist/server/api-utils';
 
-// 環境変数の定義
-const CORRECT_PASSWORD = process.env.WORKS_PLUS_PASSWORD || '';
-const JWT_SECRET = process.env.JWT_SECRET || '';
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+  const token = request.cookies.get('auth-token')?.value;
 
-if (!CORRECT_PASSWORD || !JWT_SECRET) {
-  console.error('環境変数が正しく設定されていません');
-}
+  console.log('Middleware: Request URL:', request.url);
+  console.log('Middleware: Request Path:', pathname);
+  console.log('Middleware: Auth Token:', token);
 
-export async function POST(request: Request) {
+  if (!token) {
+    console.log('Middleware: No token found.');
+    if (pathname.startsWith('/works_plus/auth')) {
+      return NextResponse.next();
+    }
+    return NextResponse.redirect(new URL('/works_plus/auth', request.url));
+  }
+
   try {
-    // Content-Type チェック
-    if (request.headers.get('Content-Type') !== 'application/json') {
-      return NextResponse.json(
-        { success: false, message: '無効な Content-Type です' },
-        { status: 400 }
-      );
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || '', {
+      algorithms: ['HS256'],
+    });
+    console.log('Middleware: Token validated successfully:', decoded);
+
+    if (pathname.startsWith('/works_plus/auth')) {
+      return NextResponse.redirect(new URL('/works_plus', request.url));
     }
 
-    // リクエストボディのパース
-    const { password } = await request.json();
-
-    // デバッグログ
-    if (process.env.NODE_ENV !== 'production') {
-      console.log('入力されたパスワード:', password);
-    }
-
-    // パスワードの確認
-    if (password === CORRECT_PASSWORD) {
-      console.log('認証成功');
-
-      // JWTトークンの生成
-      const token = jwt.sign({ authenticated: true }, //ペイロード
-         process.env.JWT_SECRET || '',  //シークレット
-        {
-         expiresIn: '24h', //有効期限
-         algorithm: 'HS256', //アルゴリズム
-        }
-      );
-      console.log('Generated Token:', token);//生成されたトークンを確認
-
-      // トークンをCookieに設定
-      const response = NextResponse.json({ success: true, redirectTo: '/works_plus' });
-
-      response.cookies.set('auth-token', token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
-        maxAge: 60 * 60 * 24,
-        path: '/',
-      });
-
-      return response;// return cookies respons 
-
-      return NextResponse.json({ success: true, redirectTo: '/works_plus' });
-    } else {
-      console.log('認証失敗: パスワードが一致しません');
-      return NextResponse.json(
-        { success: false, message: 'パスワードが正しくありません' },
-        { status: 401 }
-      );
-    }
+    return NextResponse.next();
   } catch (err) {
-    console.error('サーバーエラー:', err);
-    return NextResponse.json(
-      { success: false, message: 'サーバーエラーが発生しました' },
-      { status: 500 }
-    );
+    console.error('Middleware: JWT Verification Error:', {
+      name: err.name,
+      message: err.message,
+      stack: err.stack,
+    });
+
+    if (!pathname.startsWith('/works_plus/auth')) {
+      return NextResponse.redirect(new URL('/works_plus/auth', request.url));
+    }
+
+    return NextResponse.next();
   }
 }
+
+export const config = {
+  matcher: ['/works_plus/:path*'],
+};
