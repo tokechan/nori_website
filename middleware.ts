@@ -1,36 +1,66 @@
 import { NextResponse } from 'next/server';
-import { NextRequest } from 'next/server';
+import type { NextRequest } from 'next/server';
+import jwt from 'jsonwebtoken';
+import path from 'path';
   
 
 export function middleware(request: NextRequest) {
-    const { pathname } = request.nextUrl;
-    const authToken = request.cookies.get('auth-token')?.value;
+    //リクエストURLとトークンを取得
+    const { pathname } = request.nextUrl;//現在のパスの取得
+    const token = request.cookies.get('auth-token')?.value;//クッキーからトークン取得
   
     console.log('Middleware: Request URL:', request.url);
     console.log('Middleware: Request Path:', pathname);
-    console.log('Middleware: Auth Token:', authToken);
+    console.log('Middleware: Auth Token:', token);
   
-    if (pathname.startsWith('/works_plus/auth')) {
-      console.log('Middleware: Auth page - skip');
+    //トークンが存在しない場合
+    if(!token) {
+        console.log('Middleware: No toke found.');
+
+        //認証ページにいる場合はリダイレクトしない
+        if(pathname.startsWith('/works_plus/auth')) {
+            console.log('Middleware: No Already on auth page. skipping redirect.');
+            return NextResponse.next();
+        }
+
+        console.log('Middleware: Redirecting to auth page:');
+        return NextResponse.redirect(new URL('/works_plus/auth', request.url));
+    }
+
+    //トークンの検証
+    try {
+        //JWT vilidation
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || '', {
+            algorithms: ['HS256'], //アルゴリズムを明示
+        });//トークン検証
+        console.log('Middleware: Token validated successfully:', decoded);
+        // } catch (err) {
+        //     console.log('JWT Verifiction Error:', err.message);//エラー内容を詳細に出力
+        //     throw err;//必要に応じてエラーをスロー
+        // }
+
+        //認証ずみで認証ページにいる場合、別のページにリダイレクト
+        if (pathname.startsWith('/works_plus/auth')){
+            console.log('Middleware: Authenticated. Redirecting to /works_plus.');
+            return NextResponse.redirect(new URL('/works_plus', request.url));
+        }
+
+        //それ以外はそのまま進む
+        console.log('Middleware: Authenticated. Proceeding to requestd page.');
+        return NextResponse.next();
+      } catch (err) {
+        console.log('Middleware: JWT Verification Error:', err);
+        //トークンが無効の場合、認証ページにリダイレクト
+        if(!pathname.startsWith('/works_plus/auth')) {
+           return NextResponse.redirect(new URL('/works_plus/auth', request.url));
+      }
+
+      //認証ページに入る場合はそのまま進む
       return NextResponse.next();
     }
+}
   
-    if (pathname.startsWith('/works_plus') && !authToken) {
-      console.log('Middleware: No token found. Redirecting to auth page.');
-      return redirectToAuthPage(request, pathname);
-    }
   
-    console.log('Middleware: Token validated or not required.');
-    return NextResponse.next();
-  }
-  
-  function redirectToAuthPage(request: NextRequest, pathname: string) {
-    const redirectUrl = `/works_plus/auth?redirect=${encodeURIComponent(pathname)}`;
-    console.log('Middleware: Redirecting to auth page:', redirectUrl);
-    return NextResponse.redirect(new URL(redirectUrl, request.url));
-  }
-  
-
 export const config = {
-  matcher: ['/works_plus/:path*', '/works_plus/auth'], // works_plus 以下全てを対象に
+  matcher: ['/works_plus/:path*'], // Middlwareを適応するパス
 };

@@ -44,8 +44,11 @@ export default function Page() {
         console.log('Cookies before redirect:', document.cookie);
         // リダイレクトを少し遅らせることでミドルウェアのトークンチェックを回避
         const { redirectTo } = await response.json();
-        router.push(redirectTo);// sucessece redirect
-      }else {
+
+        setTimeout(() => {
+          router.push(redirectTo);// sucessece redirect
+        }, 100);//100ms delay
+      } else {
         console.log('認証失敗');
         setError('パスワードが正しくありません');
       }
