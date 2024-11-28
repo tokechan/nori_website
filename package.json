@@ -12,6 +12,7 @@
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
     "@mui/material": "^6.1.8",
+    "@supabase/supabase-js": "^2.46.2",
     "dotenv": "^16.4.5",
     "googleapis": "^144.0.0",
     "jsonwebtoken": "^9.0.2",
