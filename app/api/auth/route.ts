@@ -1,73 +1,30 @@
-import { NextResponse } from 'next/server';
+import { supabase } from '../../../lib/supabaseClient';
+import { cookies } from 'next/headers';
 import jwt from 'jsonwebtoken';
-import { redirect } from 'next/dist/server/api-utils';
 
-// 環境変数の定義
-const CORRECT_PASSWORD = process.env.WORKS_PLUS_PASSWORD || '';
-const JWT_SECRET = process.env.JWT_SECRET || '';
+export async function POST(req: Request) {
+  const { email, password } = await req.json();
 
-if (!CORRECT_PASSWORD || !JWT_SECRET) {
-  console.error('環境変数が正しく設定されていません');
-}
+  // Supabaseで認証
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
-export async function POST(request: Request) {
-  try {
-    // Content-Type チェック
-    if (request.headers.get('Content-Type') !== 'application/json') {
-      return NextResponse.json(
-        { success: false, message: '無効な Content-Type です' },
-        { status: 400 }
-      );
-    }
-
-    // リクエストボディのパース
-    const { password } = await request.json();
-
-    // デバッグログ
-    if (process.env.NODE_ENV !== 'production') {
-      console.log('入力されたパスワード:', password);
-    }
-
-    // パスワードの確認
-    if (password === CORRECT_PASSWORD) {
-      console.log('認証成功');
-
-      // JWTトークンの生成
-      const token = jwt.sign({ authenticated: true }, //ペイロード
-         process.env.JWT_SECRET || '',  //シークレット
-        {
-         expiresIn: '24h', //有効期限
-         algorithm: 'HS256', //アルゴリズム
-        }
-      );
-      console.log('Generated Token:', token);//生成されたトークンを確認
-
-      // トークンをCookieに設定
-      const response = NextResponse.json({ success: true, redirectTo: '/works_plus' });
-
-      response.cookies.set('auth-token', token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
-        maxAge: 60 * 60 * 24,
-        path: '/',
-      });
-
-      return response;// return cookies respons 
-
-      return NextResponse.json({ success: true, redirectTo: '/works_plus' });
-    } else {
-      console.log('認証失敗: パスワードが一致しません');
-      return NextResponse.json(
-        { success: false, message: 'パスワードが正しくありません' },
-        { status: 401 }
-      );
-    }
-  } catch (err) {
-    console.error('サーバーエラー:', err);
-    return NextResponse.json(
-      { success: false, message: 'サーバーエラーが発生しました' },
-      { status: 500 }
-    );
+  if (error || !data.session) {
+    return new Response(JSON.stringify({ error: 'Invalid credentials' }), { status: 401 });
   }
+
+  // JWTトークン生成
+  const token = jwt.sign({ email }, process.env.JWT_SECRET!, { expiresIn: '1h' });
+
+  // クッキーにトークンを保存
+  cookies().set({
+    name: 'auth-token',
+    value: token,
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'Strict',
+    path: '/',
+    maxAge: 60 * 60, // 1時間
+  });
+
+  return new Response(JSON.stringify({ message: 'Login successful' }), { status: 200 });
 }
