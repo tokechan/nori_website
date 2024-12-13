@@ -4,7 +4,7 @@ export default function Page() {
     return (
 
       <section className="container mx-auto px-4 py-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="flex flex-col md:grid-row gap-12 items-center">
         <div>
           <h1 className="text-xl font-serif leading-tight mb-12 text-center">
             PERSONAL<br />
@@ -12,7 +12,8 @@ export default function Page() {
           <h2 className="text-xl font-serif leding-tight mb-6 text-center">
             「この溢れる感情を」
           </h2>
-            <div className="relative aspect-square">
+          <a href="https://afuredasukonokanjyouwo.net" target="_blank" rel="noopener noreferrer">
+            <div className="relative aspect-square w-full">
               <Image
                 src="/images/ahuredasu.png"
                 alt="afuredasukonokanjowo"
@@ -20,6 +21,7 @@ export default function Page() {
                 className="object-contain animate-float"
               />
             </div>
+            </a>
             <p className="text-xl py-4 text-center">
               第１２回オイド短編映画祭 入選
             </p>
