@@ -20,13 +20,18 @@ export default function Footer() {
           </div>
           <div>
             <nav className="space-y-4">
-              <Link href="/projects" className="block hover:underline">PROJECTS</Link>
               <Link href="/about" className="block hover:underline">ABOUT</Link>
+              <Link href="/works" className="block hover:underline">WORKS</Link>
+              <Link href="/works_plus" className="block hover:underline">WORKS+</Link>
+              <Link href="/personal" className="block hover:underline">PERSONAL</Link>
+              <Link href="/blog" className="block hover:underline">BLOG</Link>
               <Link href="/contact" className="block hover:underline">CONTACT</Link>
+
+
             </nav>
           </div>
           <div>
-            <p className="mb-4">Shonan, Kanagawa </p>
+            
             <div className="flex gap-4">
               <Link href="https://www.instagram.com/unlabeling___/" className="hover:opacity-70">
                 <Instagram className="w-5 h-5" />

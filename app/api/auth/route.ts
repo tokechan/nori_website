@@ -1,49 +1,30 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { supabase } from '../../../lib/supabaseClient';
+import { cookies } from 'next/headers';
 import jwt from 'jsonwebtoken';
 
-export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  const token = request.cookies.get('auth-token')?.value;
+export async function POST(req: Request) {
+  const { email, password } = await req.json();
 
-  console.log('Middleware: Request URL:', request.url);
-  console.log('Middleware: Request Path:', pathname);
-  console.log('Middleware: Auth Token:', token);
+  // Supabaseで認証
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
-  if (!token) {
-    console.log('Middleware: No token found.');
-    if (pathname.startsWith('/works_plus/auth')) {
-      return NextResponse.next();
-    }
-    return NextResponse.redirect(new URL('/works_plus/auth', request.url));
+  if (error || !data.session) {
+    return new Response(JSON.stringify({ error: 'Invalid credentials' }), { status: 401 });
   }
 
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || '', {
-      algorithms: ['HS256'],
-    });
-    console.log('Middleware: Token validated successfully:', decoded);
+  // JWTトークン生成
+  const token = jwt.sign({ email }, process.env.JWT_SECRET!, { expiresIn: '1h' });
 
-    if (pathname.startsWith('/works_plus/auth')) {
-      return NextResponse.redirect(new URL('/works_plus', request.url));
-    }
+  // クッキーにトークンを保存
+  cookies().set({
+    name: 'auth-token',
+    value: token,
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'Strict',
+    path: '/',
+    maxAge: 60 * 60, // 1時間
+  });
 
-    return NextResponse.next();
-  } catch (err) {
-    console.error('Middleware: JWT Verification Error:', {
-      name: err.name,
-      message: err.message,
-      stack: err.stack,
-    });
-
-    if (!pathname.startsWith('/works_plus/auth')) {
-      return NextResponse.redirect(new URL('/works_plus/auth', request.url));
-    }
-
-    return NextResponse.next();
-  }
+  return new Response(JSON.stringify({ message: 'Login successful' }), { status: 200 });
 }
-
-export const config = {
-  matcher: ['/works_plus/:path*'],
-};
