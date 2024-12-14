@@ -3,7 +3,7 @@ import Image from "next/image"
 export default function Page() {
     return (
       <div>
-      <section className="container mx-auto px-4 py-6">
+      <section className="container mx-auto px-4 py-6 mb-12">
         <h1 className="text-xl font-serif leading-tight mb-6 text-center">
         ABOUT
         </h1>
@@ -60,17 +60,16 @@ export default function Page() {
               new forms of expression in order to realize various ideas,<br />
               with the vision of creating a gentle,<br />
               imaginative world where every individual is<br />
-              respected and freed from preconceived notions.<br />
+              respected and freed from preconceived notions.
               </p>
               </div>
           </div>
       </section>
-      <article className="container mx-auto px-4 py-6">
-      <h1 className="text-xl font-serif leading-tight mb-6 text-center">
-        新しいセクション
+      <article className="container mx-auto px-4 py-12">
+      <h1 className="text-3xl font-serif font-bold leading-tight  text-center mb-8 py-8">
+        Message
       </h1>
-      <p>
-        ここに新しいコンテンツを追加します。
+      <p className="mt-4">
         は じ め まして 。 <br />
         映 像 制 作 の 場 で、8 年 ほ ど 広 告 や <br />
         ブランディン グム ー ビ ー 、S N S コ ンテン ツ 制 作 の 仕 事 をしてる 、N O R I K O です。 <br />
