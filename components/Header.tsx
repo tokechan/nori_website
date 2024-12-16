@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <header className="border-b relative z-50">
-      <div className="container mx-auto px-4 py-4">
+      <div className="mx-auto px-4 py-4">
         {/* <nav menu adding > */}
         <nav className="flex items-center justify-between">
           {/* logo */}
@@ -32,7 +32,7 @@ export default function Header() {
             alt="site logo"
             width={120}
             height={120}
-            className="mr-4 "
+            className="mr-4 w-auto h-[80px] min-w-[60px]"
             />
           </Link>
 
