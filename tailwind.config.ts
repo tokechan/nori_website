@@ -12,6 +12,14 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      //ブレイクポイントの設定追加
+      screens: {
+        'sm': '640px',
+        'md': '768px', 
+        'lg': '1024x',
+        'xl': '1280px',
+        '2xl': '1536px',  
+      },
       keyframes: {
         'ripple-1': {
           '0%': { transform: 'scale(0.95)', opacity: '0.5' },
