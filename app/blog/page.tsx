@@ -3,8 +3,8 @@
 
 export default function Page() {
     return (    
-      <section className="container mx-auto px-4 py-6">
-        <h1 className="text-xl font-serif leading-tight mb-6 text-center">
+      <section className="container mx-auto px-4 ">
+        <h1 className="text-4xl font-serif leading-tight mb-12 mt-12 text-center">
         BLOG
         </h1>
         {/*note card*/}

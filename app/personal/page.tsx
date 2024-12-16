@@ -3,10 +3,10 @@ import Image from "next/image"
 export default function Page() {
     return (
 
-      <section className="container mx-auto px-4 py-6">
+      <section className="container mx-auto px-4 ">
       <div className="flex flex-col md:grid-row gap-12 items-center">
         <div>
-          <h1 className="text-xl font-serif leading-tight mb-12 text-center">
+          <h1 className="text-4xl font-serif leading-tight mt-12 mb-12 text-center">
             PERSONAL<br />
           </h1>
           <h2 className="text-xl font-serif leding-tight mb-6 text-center">

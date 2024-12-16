@@ -78,6 +78,9 @@ export default function ContactPage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
+      <h1 className="text-4xl font-serif leading-tight mb-12  text-center">
+        CONTACT
+      </h1>
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-8">

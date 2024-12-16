@@ -3,8 +3,8 @@ import Image from "next/image"
 export default function Page() {
     return (
       <div>
-      <section className="container mx-auto px-4 py-6 mb-12">
-        <h1 className="text-xl font-serif leading-tight mb-6 text-center">
+      <section className="container mx-auto px-4 mb-12">
+        <h1 className="text-4xl font-serif leading-tight mb-12 mt-12 text-center">
         ABOUT
         </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
