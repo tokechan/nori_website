@@ -1,9 +1,8 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import Button from '@/components/ui/Button'
+import { Button } from '@/components/ui/button'
 import { CalendarIcon, ExternalLinkIcon } from 'lucide-react'
 import DOMPurify from 'isomorphic-dompurify'
 import Image from 'next/image'
-
 
 interface NotePost {
   title: string
@@ -41,17 +40,25 @@ export default async function NotePreview() {
                 fill
                 className="object-cover rounded-t-lg"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
+                quality={75}
+                priority={index < 3}
+                onError={(e) => {
+                  const img = e.target as HTMLImageElement;
+                  img.src = '/images/fallback.jpg';
+                }}
               />
             </div>
           )}
           <CardHeader>
-            <CardTitle className="line-clamp-2">{post.title}</CardTitle>
-            <CardDescription className="flex items-center gap-2">
-              <CalendarIcon className="w-4 h-4" />
-              {new Date(post.pubDate).toLocaleDateString('ja-JP')}
+            <div className="line-clamp-2">
+              <CardTitle>{post.title}</CardTitle>
+            </div>
+              <div className="flex items-center gap-2">
+                <CardDescription>
+                <CalendarIcon className="w-4 h-4" />
+                {new Date(post.pubDate).toLocaleDateString('ja-JP')}
             </CardDescription>
+            </div>
           </CardHeader>
           <CardContent>
             <p className="line-clamp-3 text-sm text-muted-foreground">
