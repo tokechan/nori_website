@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import jwt from 'jsonwebtoken';
 
 export function middleware(request: NextRequest) {
   // /works_plus/auth へのアクセスはミドルウェアをスキップ
@@ -10,18 +9,12 @@ export function middleware(request: NextRequest) {
 
   const token = request.cookies.get('auth-token')?.value;
 
-  if (!token) {
-    // トークンがない場合、認証ページにリダイレクト
+  if (!token || token !== 'authenticated') {
+    // トークンがない、または無効な場合、認証ページにリダイレクト
     return NextResponse.redirect(new URL('/works_plus/auth', request.url));
   }
 
-  try {
-    jwt.verify(token, process.env.JWT_SECRET || '');
-    return NextResponse.next(); // 正常なトークンの場合、そのまま進む
-  } catch (error) {
-    console.error('Middleware JWT Error:', error);
-    return NextResponse.redirect(new URL('/works_plus/auth', request.url));
-  }
+  return NextResponse.next();
 }
 
 export const config = {
