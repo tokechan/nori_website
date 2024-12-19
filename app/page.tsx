@@ -7,7 +7,7 @@ import HeroCircle from '../components/ui/hero-circle'
 export default function Home() {
   return (
     <div className="container mx-auto px-4">
-      <section className="py-24">
+      <section className="py-12">
         {/* new feature */}
         <div className="grid grid-cols-1 md:grid-cols2 gap-12 items-center">
           <div>
@@ -15,7 +15,7 @@ export default function Home() {
               <div className="space-y-40">
                 
                   <div>
-                  <h1 className="text-2xl md:text-3xl font-bold font-serif text-center mb-12">
+                  <h1 className="text-4xl md:text-4xl font-bold font-serif text-center pb-12 mb-12">
                     UNLABELING CREATIVE STUDIO
                   </h1>
                   <HeroCircle />

@@ -4,7 +4,7 @@ import { Suspense } from 'react'
 export default function BlogPage() {
   return (    
     <section className="container mx-auto px-4">
-      <h1 className="text-4xl font-serif leading-tight mb-12 mt-12 text-center">
+      <h1 className="text-4xl font-serif font-bold leading-tight mb-12 mt-12 text-center">
         BLOG
       </h1>
       <Suspense fallback={<div className="text-center py-10">Loading...</div>}>

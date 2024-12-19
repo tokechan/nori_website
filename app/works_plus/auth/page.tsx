@@ -31,7 +31,7 @@ export default function AuthPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
-      <h1 className="text-2xl font-bold mb-6">WORKS+</h1>
+      <h1 className="text-2xl font-bold mb-6">WORKS_PLUS</h1>
       <div className="w-full max-w-md p-8">
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
