@@ -3,6 +3,11 @@ import type { NextRequest } from 'next/server';
 import jwt from 'jsonwebtoken';
 
 export function middleware(request: NextRequest) {
+  // /works_plus/auth へのアクセスはミドルウェアをスキップ
+  if (request.nextUrl.pathname === '/works_plus/auth') {
+    return NextResponse.next();
+  }
+
   const token = request.cookies.get('auth-token')?.value;
 
   if (!token) {
