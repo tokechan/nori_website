@@ -3,6 +3,6 @@ export function getYoutubeId(url: string): string {
   return match ? match[1] : '';
 }
 
-export function getYoutubeThumbnail(videoId: string): string {
-  return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+export function getYoutubeThumbnailUrl(videoId: string): string {
+  return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
 }

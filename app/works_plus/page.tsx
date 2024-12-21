@@ -8,10 +8,10 @@ import type { VideoItem } from './types/video'
 
 // プロジェクトデータをVideoItem形式に変換
 const privateVideos: VideoItem[] = privateProjects.map(project => ({
-  id: project.id,
+  id: project.id.toString(),
   title: project.title,
   thumbnailUrl: project.image,
-  tags: project.tags
+  tags: project.tags.map(tag => ({ name: tag, url: project.link }))
 }))
 
 export default function WorksPlusPage() {
