@@ -1,53 +1,62 @@
-import { getYoutubeThumbnail } from "@/utils/youtube";
+import { getYoutubeThumbnailUrl } from "@/utils/youtube";
 
 export interface PrivateProject {
-    id: string;
+    id: number;
     title: string;
     image: string;
     link: string;
-    tags: { name: string; url: string; }[];
+    tags: string[];
   }
   
   export const privateProjects: PrivateProject[] = [
     {
-      id: "1",
+      id: 1,
       title: "サントリー天然水「水曜日はみずようび」",
-      image: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+      image: getYoutubeThumbnailUrl("doLnx10Xyq8"),
       link: "https://www.youtube.com/watch?v=doLnx10Xyq8",
-      tags: [
-        { name: "ドローン", url: "https://youtube.com/watch?v=VIDEO_ID_1" },
-        { name: "東京", url: "https://www.youtube.com/watch?v=doLnx10Xyq8" }
-      ]
+      tags: ["企業","アニメーション"]
     },
     {
-        id: "2",
+        id: 2,
         title: "TOKYO SPORTS STATION",
-        image: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+        image: getYoutubeThumbnailUrl("g-i6yPdmj2s"),
         link: "https://www.youtube.com/watch?v=g-i6yPdmj2s",
-        tags: [
-          { name: "ドローン", url: "https://youtube.com/watch?v=VIDEO_ID_1" },
-          { name: "東京", url: "https://www.youtube.com/watch?v=g-i6yPdmj2s" }
-        ]
+        tags: ["企業","アニメーション"]
       },
       {
-        id: "3",
+        id: 3,
         title: "A LIFE WITH H2 / Japan Blue Energy Co., Ltd",
-        image: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+        image: getYoutubeThumbnailUrl("P1AWVguetAM"),
         link: "https://www.youtube.com/watch?v=P1AWVguetAM",
-        tags: [
-          { name: "ドローン", url: "https://youtube.com/watch?v=VIDEO_ID_1" },
-          { name: "東京", url: "https://www.youtube.com/watch?v=P1AWVguetAM" }
-        ]
+        tags: ["企業","アニメーション"]
       },
       {
-        id: "4",
+        id: 4,
         title: "EED",
-        image: "https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg",
+        image: getYoutubeThumbnailUrl("KFlo9Gb-Q9E"),
         link: "https://www.youtube.com/watch?v=KFlo9Gb-Q9E",
-        tags: [
-          { name: "ドローン", url: "https://youtube.com/watch?v=VIDEO_ID_1" },
-          { name: "アニメーション", url: "https://www.youtube.com/watch?v=KFlo9Gb-Q9E" }
-        ]
+        tags: ["企業","アニメーション"]
+      },
+      {
+        id: 5,
+        title: "NEC Conection the Dots",
+        image: getYoutubeThumbnailUrl("m1L84ngV3T4"),
+        link: "https://www.youtube.com/watch?v=m1L84ngV3T4",
+        tags: ["企業","アニメーション"]
+      },
+      {
+        id: 6,
+        title: "NEC DigitalKYC",
+        image: getYoutubeThumbnailUrl("2SWaegR9jbs"),
+        link: "https://www.youtube.com/watch?v=2SWaegR9jbs",
+        tags: ["企業","アニメーション"]
+      },
+      {
+        id: 7,
+        title: "未来シナリオ 2050 – NEC未来創造会議 –",
+        image: getYoutubeThumbnailUrl("mQWsdd8bxhg"),
+        link: "https://www.youtube.com/watch?v=mQWsdd8bxhg",
+        tags: ["企業","アニメーション"]
       },
     // 他の非公開プロジェクト
   ]
