@@ -21,6 +21,7 @@ export default function WorksPlusPage() {
 
   useEffect(() => {
     const checkAuth = async () => {
+      try {
       const token = document.cookie
         .split(';')
         .find((row) => row.trim().startsWith('auth-token='))
@@ -31,8 +32,12 @@ export default function WorksPlusPage() {
         router.push(AUTH_PATH)
         return
       }
+    } catch (e) {
+      console.error('認証チェック中にエラーが発生しました:', e)
+      setError('認証チェック中にエラーが発生しました')
+      router.push(AUTH_PATH)
     }
-
+  }
     checkAuth()
   }, [router])
 
