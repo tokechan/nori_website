@@ -31,12 +31,14 @@ export const projects: Project[] = [
       {
         id: 4,
         title: "梅沢和木×布施琳太郎×GILLOCHINDOX☆GILLOCHINDAEインタビュー：「スーパーフラット」以降の日本現代アートの20年【Tokyo Art Beat 20周年特集】",
-        image: getYoutubeThumbnailUrl("2R986pz0sKA"),        link: "https://www.youtube.com/watch?v=2R986pz0sKA&t=156s",
+        image: getYoutubeThumbnailUrl("2R986pz0sKA"),        
+        link: "https://www.youtube.com/watch?v=2R986pz0sKA&t=156s",
       },
       {
         id: 5,
         title: "藪前知子 × 松江李穂 対談：日本の現代アートとキュレーション、美術館の20年【Tokyo Art Beat 20周年特集】",
-        image: getYoutubeThumbnailUrl("9SiQBXckVow"),        link: "https://www.youtube.com/watch?v=9SiQBXckVow&t=2844s",
+        image: getYoutubeThumbnailUrl("9SiQBXckVow"),        
+        link: "https://www.youtube.com/watch?v=9SiQBXckVow&t=2844s",
       },
       {
         id: 6,
