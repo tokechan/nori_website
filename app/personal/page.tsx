@@ -13,12 +13,16 @@ export default function Page() {
             「この溢れる感情を」
           </h2>
           <a href="https://afuredasukonokanjyouwo.net" target="_blank" rel="noopener noreferrer">
-            <div className="relative aspect-square w-full">
+            <div className="relative w-full aspect-[16/9] md:aspect-[4/3] lg:aspect-square">
               <Image
-                src="/images/ahuredasu.png"
+                src="/images/ahuredasu.jpg"
                 alt="afuredasukonokanjowo"
                 fill
-                className="object-contain animate-float"
+                sizes="(max-width: 768px) 100vw, 
+                       (max-width: 1200px) 85vw,
+                       75vw"  
+                className="object-contain hover:scale-105 transform duration-300"
+                priority
               />
             </div>
             </a>
