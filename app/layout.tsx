@@ -1,14 +1,15 @@
 import './globals.css'
-import { Geist } from 'next/font/google'
+import { Kiwi_Maru } from 'next/font/google'
 
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Script from 'next/script'
 
-const geist = Geist({ subsets: ['latin'] })
-// const inter = Inter({ subsets: ['latin'] })
+const kiwi = Kiwi_Maru({
+  subsets: ['latin'],
+  weight: ['300', '400', '500']
+})
 
 export const metadata: Metadata = {
   title: 'UNLABELING',
@@ -25,7 +26,7 @@ export default function RootLayout({
       <head>
 
       </head>
-      <body className={`${geist.className} min-h-screen flex flex-col`}>
+      <body className={`${kiwi.className} min-h-screen flex flex-col`}>
         <Header />
         <main className="flex-grow">
           {children}

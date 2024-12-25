@@ -2,54 +2,50 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Instagram, Twitter, Youtube } from 'lucide-react'
 
+const navItems = [
+  { href: '/about', label: 'ABOUT' },
+  { href: '/works', label: 'WORKS' },
+  { href: '/works_plus', label: 'WORKS+' },
+  { href: '/personal', label: 'PERSONAL' },
+  { href: '/blog', label: 'BLOG' },
+  { href: '/contact', label: 'CONTACT' },
+]
+
+const socialLinks = [
+  { href: 'https://www.instagram.com/unlabeling___/', Icon: Instagram, label: 'Instagram' },
+  { href: '#', Icon: Twitter, label: 'Twitter' },
+  { href: '#', Icon: Youtube, label: 'Youtube' },
+]
+
 export default function Footer() {
   return (
-    <footer className="bg-[#f5e6d3] mt-24">
+    <footer className="bg-white mt-24 border-t border-gray-200">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-          <Link href="/" className="text-2xl font-serif">
-          <Image
-            src="/images/logo_demo.svg"
-            alt="site logo"
-            width={120}
-            height={120}
-            className="mr-4"
-            />
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+          <Link href="/" className="mb-8 md:mb-0">
+            <Image src="/images/logo_demo.svg" alt="site logo" width={120} height={120} />
           </Link>
-          </div>
+          <nav className="grid grid-cols-2 gap-x-8 gap-y-4 mb-8 md:mb-0">
+            {navItems.map(({ href, label }) => (
+              <Link key={href} href={href} className="hover:underline">
+                {label}
+              </Link>
+            ))}
+          </nav>
           <div>
-            <nav className="space-y-4">
-              <Link href="/about" className="block hover:underline">ABOUT</Link>
-              <Link href="/works" className="block hover:underline">WORKS</Link>
-              <Link href="/works_plus" className="block hover:underline">WORKS+</Link>
-              <Link href="/personal" className="block hover:underline">PERSONAL</Link>
-              <Link href="/blog" className="block hover:underline">BLOG</Link>
-              <Link href="/contact" className="block hover:underline">CONTACT</Link>
-
-
-            </nav>
-          </div>
-          <div>
-            
-            <div className="flex gap-4">
-              <Link href="https://www.instagram.com/unlabeling___/" className="hover:opacity-70">
-                <Instagram className="w-5 h-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link href="#" className="hover:opacity-70">
-                <Twitter className="w-5 h-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="#" className="hover:opacity-70">
-                <Youtube className="w-5 h-5" />
-                <span className="sr-only">Youtube</span>
-              </Link>
+            <div className="flex gap-4 mb-4">
+              {socialLinks.map(({ href, Icon, label }) => (
+                <Link key={label} href={href} className="text-gray-600 hover:text-gray-900">
+                  <Icon className="w-5 h-5" />
+                  <span className="sr-only">{label}</span>
+                </Link>
+              ))}
             </div>
-            <p className="mt-8 text-sm">© 2024, UNLABELING</p>
+            <p className="text-sm">© 2024 UNLABELING</p>
           </div>
         </div>
       </div>
     </footer>
   )
 }
+
