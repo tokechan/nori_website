@@ -10,7 +10,7 @@ export default function Page() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-square">
             <Image
-              src="/images/about1fix.png"
+              src="/images/aboutme.jpg"
               alt="noriko image"
               fill
               className="object-contain animate-float"
