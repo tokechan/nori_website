@@ -41,10 +41,10 @@ export default function Home() {
         </div> 
       </section>
 
-      <section className="py-24">
+      {/* <section className="py-24">
         <h2 className="text-3xl md:text-4xl font-serif mb-12">The Latest</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* プロジェクトのマッピングはここに */}
+
           {projects.slice(0, 3).map((project) => (
         <Link
           key={project.id}
@@ -65,9 +65,9 @@ export default function Home() {
         </Link>
       ))}
         </div>
-      </section>
+      </section> */}
 
-      <section className="py-24 text-center">
+      {/* <section className="py-24 text-center">
         <div className="max-w-2xl mx-auto">
           <div className="relative h-40 mb-8">
             <Image
@@ -85,7 +85,7 @@ export default function Home() {
             CONTACT
           </Link>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }
