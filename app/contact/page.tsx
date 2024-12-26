@@ -2,7 +2,6 @@
 
 import { TextField, Button, Typography, styled } from '@mui/material';
 import { useState } from 'react';
-// import { supabase } from '@/lib/supabaseClient';
 
 const StyledTextField = styled(TextField)({
   '& .MuiInput-underline:before': {
@@ -51,27 +50,15 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateInput()) return;
-
+    
     setStatus('submitting');
+    
     try {
-      //supabaseにデータを挿入
-      const { error } = supabase.from('contacts').insert([
-        {
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        },
-      ]);
-
-      if (error) {
-        console.log('Supabase Insert Error:', error);
-        throw new Error(error.message);
-      }
-      
+      console.log('Form submitted:', formData);
+      setFormData({ name: '', email: '', subject: '', message: '' });
       setStatus('success');
-    } catch (err) {
-      console.log('Form Submiton Error:', err);
+    } catch (error) {
+      console.error('Error submitting form:', error);
       setStatus('error');
     }
   };
