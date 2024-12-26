@@ -2,7 +2,7 @@
 
 import { TextField, Button, Typography, styled } from '@mui/material';
 import { useState } from 'react';
-import { supabase } from '@/lib/supabaseClient';
+// import { supabase } from '@/lib/supabaseClient';
 
 const StyledTextField = styled(TextField)({
   '& .MuiInput-underline:before': {
@@ -141,14 +141,7 @@ export default function ContactPage() {
                   type="submit"
                   variant="contained"
                   disabled={status === 'submitting'}
-                  sx={{
-                    backgroundColor: '#E6E6FA',
-                    color: '#000',
-                    '&:hover': { backgroundColor: '#D8D8FF' },
-                    boxShadow: 'none',
-                    borderRadius: '0',
-                    padding: '0.5rem 2rem',
-                  }}
+                  className="bg-gray-100 text-black shadow-none rounded-none px-8 py-2"
                 >
                   {status === 'submitting' ? '送信中...' : '送信する'}
                 </Button>
