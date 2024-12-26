@@ -45,6 +45,7 @@ function convertRSSItemToNotePost(item: RSSItem): NotePost {
   };
 }
 
+
 export async function GET() {
   noStore()
 
@@ -60,7 +61,7 @@ export async function GET() {
     const data = await response.text()
     
     const result: RSSData = await new Promise((resolve, reject) => {
-      parseString(data, (err, result) => {
+      parseString(data, (err: Error | null, result: RSSData) => {
         if (err) reject(err);
         else resolve(result);
       });
