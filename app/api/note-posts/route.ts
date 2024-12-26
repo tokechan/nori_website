@@ -60,7 +60,7 @@ export async function GET() {
 
     const data = await response.text()
     
-    const result: RSSData = await new Promise((resolve, reject) => {
+    const result: RSSData = await new Promise<RSSData>((resolve, reject) => {
       parseString(data, (err: Error | null, result: RSSData) => {
         if (err) reject(err);
         else resolve(result);
