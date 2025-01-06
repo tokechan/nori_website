@@ -23,7 +23,7 @@ export default function ItsMe() {
             写真と文：七緒
             </p>
         </h1>
-        <p className="text-lg leading-relaxed mb-8">
+        <p className="prose prose-lg text-lg leading-relaxed mb-8">
             映像監督、クリエイティブディレクターとして活躍するNORIKOさん。その創作の源は、
             今まで歩んできた人生にあります。息苦しさを抱えた幼少期を経て、たどり着いた自分らしい表現。
             そして見据える未来について、ゆっくりお話を伺いました。
@@ -32,7 +32,7 @@ export default function ItsMe() {
 
       {/* Section 1 */}
       <section className="mb-24">
-                <div className="relative aspect-[3/2]">
+                <div className="relative aspect-[3/2] mt-8 mb-12">
                     <Image
                     src="/images/noriko-ocean1.jpg"
                     alt="海辺に立つNOROKO"
@@ -42,9 +42,11 @@ export default function ItsMe() {
                     />
                 </div> 
         
-        <div className="prose prose-lg leading-relaxed max-w-none">
-        <h2 className="text-2xl font-bold mb-12">暗闇で見つけた「映像」という光</h2>
-
+        <div className="prose prose-lg text-lg leading-relaxed mb-8">
+        <h2 className="text-2xl font-bold mb-12">本当の私は置いてけぼりだった</h2>
+            <p>
+            「人の期待に応えてばかりで、本当の私は置いてけぼりだった」
+            </p>
             <p>
             チャーミングな笑顔でそう吐露するNORIKOさんは映像監督、クリエイティブディレクターとして、
               映像を軸としたコンテンツ制作を生業にしています。いくつかの制作会社を経て『UNALABELING』として独立。
@@ -62,7 +64,7 @@ export default function ItsMe() {
               そういうこと言うんだ』と怒鳴られる。言いなりにならざるを得ない状況でした」
             </p>
 
-            <div className="relative aspect-[2/3] mb-12">
+            <div className=" relative aspect-[2/3] mt-8 mb-12">
             <Image
             src="/images/noriko-ocean2.jpg"
             alt="海辺に立つNOROKO"
@@ -99,7 +101,7 @@ export default function ItsMe() {
         <section className="mb-24">
             <h2 className="text-2xl font-bold mb-12">暗闇で見つけた「映像」という光</h2>
 
-            <div className="relative aspect-[16/9] mb-12">
+            <div className="relative aspect-[16/9] mt-8 mb-12">
                 <Image
                 src="/images/noriko-ocean3.jpg"
                 alt="海辺に座るNOROKO"
@@ -109,7 +111,7 @@ export default function ItsMe() {
                 />
             </div>
 
-            <div className="prose prose-lg leading-relaxed max-w-none">
+            <div className="prose prose-lg text-lg leading-relaxed mb-8">
                 <p>
                 無邪気でいたいのに、環境がそうさせてくれず、勝手なイメージを抱かれてしまう。
                 息苦しさを抱えながらも、いよいよ就職。親の猛反対を押し切り、学生時代からアルバイトを続けていたApple Japanへ。ところが…
@@ -132,7 +134,7 @@ export default function ItsMe() {
                 「私の人生に寄り添ってくれているのは、映像だ」
                 </p>
 
-                <div className="relative aspect-[16/9] mb-12">
+                <div className="relative aspect-[16/9] mt-8 mb-12">
                 <Image
                 src="/images/noriko-ocean4.jpg"
                 alt="海辺を走るNOROKO"
@@ -141,7 +143,7 @@ export default function ItsMe() {
                 priority 
                 />
             </div>
-
+            <div className="prose prose-lg text-lg leading-relaxed mb-8">
                 <p>
                 「親に否定されてばかりで好きなものがわからなかったけれど、どんな辛い時もそばにいてくれたのは映像でした。
                 幼少期からいじめられることも多く、画面越しの世界に浸ることで心のバランスを取っていました。
@@ -159,7 +161,7 @@ export default function ItsMe() {
                 <p>
                 日本トップクラスのモーショングラフィックを生み出す「EDP Grapics Works」でモーショングラフィックデザインを学んだ後、ファッションメディアでトレンド感のある動画やコンテンツ制作を手がけた後、海外拠点のニュースメディアへ。
                 </p>
-                <div className="relative aspect-[2/3] mb-12">
+                <div className="relative aspect-[2/3] mt-8 mb-12">
                 <Image
                 src="/images/ahuredasu.jpg"
                 alt="溢れ出すこの感情を"
@@ -172,15 +174,15 @@ export default function ItsMe() {
                 2021年には映画<Link href="https://afuredasukonokanjyouwo.net/" className="text-blue-600 hover:text-blue-800 underline">『溢れ出すこの感情を』</Link>を監督し「第12回オイド短編映画祭」「Berlin Lift-off Film Festival 2022」入選。
                 活躍の幅をのびのびと広げ『UNALABELING』として独立しました。
                 </p>
-
+            </div>
             </div>
         </section>
 
       {/* Section 3 */}
         <section className="mb-24">
           <h2 className="text-2xl font-bold mb-12">対話と情熱で、変幻自在に想いを届ける</h2>
-            <div className="prose prose-lg leading-relaxed max-w-none">
-                <p>
+          <div className="prose prose-lg text-lg leading-relaxed mb-8">
+          <p>
                 NORIKOさんは多彩な表現が魅力です。モーショングラフィックス、ファッション、アート、対談、ドキュメンタリー。
                 ひとところにおさまらない表現において、通底している想い。それは屋号でもある「UNALABELING」。
                 ラベルをはがすことで、固定観念に縛られないあたらしい表現を。
@@ -201,8 +203,8 @@ export default function ItsMe() {
             />
         </div>
 
-        <div className="prose prose-lg leading-relaxed max-w-none">
-            <p>
+        <div className="prose prose-lg text-lg leading-relaxed mb-8">
+        <p>
             「私自身、本来の自分と異なるたくさんのラベルを貼られて、長い間、息苦しかった。たとえば、容姿や体型に対して嫌な言葉を散々受けてきました。だから映像を作ることで、無意識に抱いてしまう思い込みをはがしていきたい」
             </p>
             <p>
@@ -235,7 +237,7 @@ export default function ItsMe() {
             ></iframe>
         </div>
         
-        <div className="prose prose-lg leading-relaxed max-w-none">
+        <div className="prose prose-lg text-lg leading-relaxed mb-8">
             <p>
             「最初は産地の方々もびっくりしていましたが、結果的に皆さん、とても喜んでくれました。
             働く人も見学しに来た人もイメージが変わったと言っていて。
@@ -268,7 +270,7 @@ export default function ItsMe() {
             />
         </div>
 
-        <div className="prose prose-lg leading-relaxed max-w-none">
+        <div className="prose prose-lg text-lg leading-relaxed mb-8">
             <p>
             苦しみ続けた過去があるから、今がある。なんて綺麗事では語れないほど、色々あった人生だけれど。いくつもの殻を破って、自らの足で前に進んできた。そのことはたしかです。
             </p>
@@ -289,7 +291,7 @@ export default function ItsMe() {
             「知らぬ間につけていたラベルをお互いはがしていけたら、あたらしい世界を一緒に見られる気がする」   
             </p>
 
-            <div className="relative aspect-[16/9] mb-12">
+            <div className="relative aspect-[16/9] mt-8 mb-12">
             
             <Image
             src="/images/noriko-ocean7.jpg"
@@ -299,7 +301,7 @@ export default function ItsMe() {
             priority 
             />
             </div>
-        <div className="prose prose-lg leading-relaxed max-w-none">
+        <div className="prose prose-lg text-lg leading-relaxed mb-8">
             <p>
             これからもNORIKOさんは、人に向き合いながら、情熱を携え、届けていく。その過程で、私もあなたも脱皮しながら、あたらしくなっていく。その延長線上にある未来を、一緒に見てみたいなと思う。
             </p>
