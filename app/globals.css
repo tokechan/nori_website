@@ -113,3 +113,25 @@
   }
 }
 
+@layer components {
+  .prose-content {
+    @apply prose prose-lg text-lg leading-relaxed mb-8;
+  }
+  
+  .heading-primary {
+    @apply text-4xl text-center font-bold mb-16;
+  }
+  
+  .heading-secondary {
+    @apply text-2xl font-bold mb-12;
+  }
+  
+  .content-wrapper {
+    @apply container mx-auto px-4 py-16;
+  }
+  
+  .article-container {
+    @apply max-w-4xl mx-auto;
+  }
+}
+
