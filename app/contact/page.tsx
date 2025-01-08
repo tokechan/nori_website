@@ -66,7 +66,7 @@ export default function ContactPage() {
   return (
     <div className="content-wrapper">
       <article className="article-container">
-        <h1 className="heading-primary">CONTACT</h1>
+        <h1 className="text-4xl font-serif font-bold leading-tight mt-12 mb-12 text-center">CONTACT</h1>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-8">
