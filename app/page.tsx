@@ -1,8 +1,4 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { projects } from '../data/projects'
 import HeroCircle from '../components/ui/hero-circle'
-import VideoBackground from '../components/VideoBackground'
 
 
 
