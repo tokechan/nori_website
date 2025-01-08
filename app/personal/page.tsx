@@ -1,7 +1,7 @@
 import Image from "next/image"
 import ahureasuImage from '@/public/images/ahuredasu.jpg'
 
-export default function Page() {
+export default function PersonalPage() {
     return (
       <section className="container mx-auto px-4">
         <div className="flex flex-col md:grid-row gap-12 items-center">
@@ -10,7 +10,7 @@ export default function Page() {
               PERSONAL<br />
             </h1>
             <h2 className="text-xl font-serif leading-tight mb-6 text-center">
-              「この溢れる感情を」
+              「溢れ出すこの感情を」
             </h2>
             <a href="https://afuredasukonokanjyouwo.net" target="_blank" rel="noopener noreferrer">
               <div className="relative">
