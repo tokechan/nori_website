@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
+// ナビゲーションリンクを定数として分離
+const NAV_ITEMS = ['HOME', 'ABOUT', 'WORKS', 'WORKS_PLUS', 'PERSONAL', 'BLOG', 'CONTACT'] as const;
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -21,7 +23,7 @@ export default function Header() {
   }, [isOpen])
 
   return (
-    <header className="border-b relative z-50">
+    <header className="border-b relative z-50" role="banner">
       <div className="mx-auto px-4 py-4">
         {/* <nav menu adding > */}
         <nav className="flex items-center justify-between">
@@ -36,11 +38,12 @@ export default function Header() {
             />
           </Link>
 
-          {/* bumbergar menu button */}
+          {/* hamburger menu button */}
           <button 
-            className="block md:hidden text-gray-800 focus:outline-none z-50 relative" 
+            className="block md:hidden text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-500 z-50 relative" 
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle navigation menu"
+            aria-expanded={isOpen}
           >
             <svg
               className="w-6 h-6"
@@ -59,25 +62,41 @@ export default function Header() {
           </button>
 
           {/* nav menu */}
-            <div 
-              className={`${
-                isOpen ? 'translate-x-0' : 'translate-x-full' 
-              } fixed top-0 left-0 h-full w-full bg-white shadow-md z-50 md:static md:h-auto md:w-auto md:shadow-none md:translate-x-0 transition-transform duration-300 ease-in-out md:transition-none`}
-            >
-             <ul className="flex flex-col md:flex-row md:items-center md:gap-8 h-full justify-center md:h-auto">
-              {['HOME', 'ABOUT', 'WORKS', 'WORKS_PLUS', 'PERSONAL', 'BLOG', 'CONTACT'].map((item) => (
-                <li key={item} className= "text-center md:text-left">
+          <nav 
+            className={`${
+              isOpen ? 'translate-x-0' : 'translate-x-full'
+            } fixed top-0 left-0 h-full w-full bg-navigation-background shadow-md z-50 md:static md:h-auto md:w-auto md:shadow-none md:translate-x-0 transition-transform duration-300 ease-in-out md:transition-none`}
+            role="navigation"
+            aria-label="Main navigation"
+          >
+            <ul className="flex flex-col md:flex-row md:items-center md:gap-8 h-full justify-center md:h-auto">
+              {NAV_ITEMS.map((item) => (
+                <li key={item} className="text-center md:text-left">
                   <Link 
                     href={item === 'HOME' ? '/' : `/${item.toLowerCase()}`}
-                    className="block px-4 py-4 md:py-2 hover:bg-gray-100 text-2xl md:text-base"
+                    className="
+                      block px-6 py-6 md:py-2 
+                      text-2xl md:text-base
+                      text-navigation-text
+                      transform 
+                      hover-hover:hover:scale-110 
+                      hover-hover:hover:text-navigation-hover
+                      active:scale-110 
+                      active:text-navigation-hover
+                      focus-visible:scale-110
+                      focus-visible:text-navigation-hover
+                      transition-all duration-300
+                      outline-none
+                      touch-manipulation
+                    "
                     onClick={() => setIsOpen(false)}
-                    >
-                      {item}
+                  >
+                    {item}
                   </Link>
                 </li>
-                ))}
+              ))}
             </ul>
-          </div>
+          </nav>
         </nav>
       </div>
       {isOpen && (
