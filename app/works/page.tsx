@@ -1,7 +1,7 @@
 'use client'
 
-import Link from 'next/link'
-import Image from 'next/image'
+// import Link from 'next/link'
+// import Image from 'next/image'
 import { projects } from '../../data/projects'
 import { VideoGrid } from '../works_plus/components/video-grid'
 import type { VideoItem } from '../works_plus/types/video'
