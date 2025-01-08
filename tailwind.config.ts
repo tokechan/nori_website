@@ -49,9 +49,15 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			},
+  			navigation: {
+  				text: 'hsl(var(--navigation-text))',
+  				hover: 'hsl(var(--navigation-hover))',
+  				background: 'hsl(var(--navigation-background))'
   			}
   		},
   		screens: {
+  			'hover-hover': {'raw': '(hover: hover)'},
   			sm: '640px',
   			md: '768px',
   			lg: '1024x',
@@ -100,12 +106,27 @@ export default {
   					transform: 'scale(1)',
   					opacity: '0.2'
   				}
+  			},
+  			'nav-tap': {
+  				'0%': {
+  					transform: 'scale(1)',
+  					opacity: '1'
+  				},
+  				'50%': {
+  					transform: 'scale(0.95)',
+  					opacity: '0.8'
+  				},
+  				'100%': {
+  					transform: 'scale(1)',
+  					opacity: '1'
+  				}
   			}
   		},
   		animation: {
   			'ripple-1': 'ripple-1 4s ease-in-out infinite',
   			'ripple-2': 'ripple-2 4s ease-in-out infinite 0.3s',
-  			'ripple-3': 'ripple-3 4s ease-in-out infinite 0.6s'
+  			'ripple-3': 'ripple-3 4s ease-in-out infinite 0.6s',
+  			'nav-tap': 'nav-tap 0.2s ease-in-out'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
