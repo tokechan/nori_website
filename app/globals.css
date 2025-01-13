@@ -80,14 +80,26 @@
 }
 
 @layer components {
+  .page-container {
+    @apply relative w-full h-full;
+  }
+
+  .background-layer {
+    @apply absolute inset-0 z-0 opacity-40;
+  }
+
+  .content-layer {
+    @apply relative z-10 container mx-auto px-4 py-12;
+  }
+
+  .page-header {
+    @apply text-4xl font-serif font-bold leading-tight mb-12 text-center;
+  }
+
   .base-container {
     @apply mx-auto;
   }
 
-  .content-wrapper {
-    @apply container px-4 py-16 base-container;
-  }
-  
   .article-container {
     @apply max-w-4xl base-container;
   }
