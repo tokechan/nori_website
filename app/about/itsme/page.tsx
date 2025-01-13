@@ -66,7 +66,7 @@ export default function ItsMe() {
 
             <div className=" relative aspect-[2/3] mt-8 mb-12">
             <Image
-            src="/images/noriko-ocean2.jpg"
+            src="/images/noriko-ocean2.jpeg"
             alt="海辺に立つNOROKO"
             fill 
             className="object-cover rounded-lg"
