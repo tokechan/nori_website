@@ -6,7 +6,7 @@ export default function Page() {
     return (
       <div>
       <section className="container mx-auto px-4 mb-12">
-        <h1 className="text-4xl font-serif font-bold leading-tight mb-12 mt-12 text-center">
+      <h1 className="text-4xl font-base leading-tight mb-12 text-center mt-12">
         ABOUT
         </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

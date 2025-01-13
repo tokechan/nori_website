@@ -15,21 +15,30 @@ export default function HomePage() {
               <div>
                 <main>
                   <div>
-                    {/*                   
+                                      
                   <div className="flex justify-center">
-                    <h2 className="text-2xl md:text-3xl font-serif  text-left mb-12">
-                      人もモノも見え方、捉え方、価値観は、<br />
-                      いくつもあって、もっと自由であっていい<br />
-                      そんな想像力の溢れる<br />
-                      優しい世界をつくっていけるように<br />
-                      無意識に付けられてしまっている<br />
-                      ラベルをはがしていくことに注力し<br />
-                      固定概念に縛られない<br />
-                      新しい表現づくりの追求を<br />
-                      していきたいという想いから<br />
-                      『UNLABELING』と名付けました。<br />
+                    <h2 className="text-2xl md:text-3xl font-normal text-center tracking-normal drop-shadow-sm mt-12 mb-12 leading-loose">
+                      <span className="tracking-widest leading-loose">UNLABELING Creative Studio</span>
+                      <br />
+                      創造力の和でつくる新たな価値
                     </h2>
-                  </div> */}
+                  </div>
+
+                  <div className="flex justify-center">
+                    <p className="font-base text-lg md:text-xl text-center tracking-normal leading-loose mt-12 mb-12">
+                    <span className="tracking-widest leading-loose">UNLABELING</span>は映像を軸とした<span className="tracking-widest leading-loose">Creative Studio</span>です。
+                    <br />
+                    『心ゆさぶる映像が感動と共感をうむ』をタグラインに
+                    <br />
+                    人、サービス、モノの想いと魅力を深堀り
+                    <br />
+                    「見えない価値」を発見し
+                    <br />
+                    心を動かす映像表現を武器にストーリーを紡ぎ
+                    <br />
+                    多角的な視点でビジネスをサポートします。
+                    </p>
+                  </div>
                   </div>
                 </main>
               </div>

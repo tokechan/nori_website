@@ -134,9 +134,20 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		fontFamily: {
-  			yumin: ['Yu Mincho', 'YuMincho', 'serif'],
+  			sans: [
+  				'var(--font-notoSansJP)',
+  				'var(--font-amiri)',
+  				'sans-serif'
+  			],
+  			amiri: ['var(--font-amiri)', 'serif'],
+  			'noto-sans': ['var(--font-notoSansJP)', 'sans-serif'],
+  			base: [
+  				'var(--font-amiri)',
+  				'var(--font-notoSansJP)',
+  				'sans-serif'
+  			]
   		},
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 } satisfies Config;

@@ -11,8 +11,8 @@ export default function BlogPage() {
       </div>
       {/* コンテンツレイヤー */}
       <div className="content-layer">
-        <h1 className="page-header">
-          BLOG
+        <h1 className="text-4xl text-center mb-16">
+        BLOG
         </h1>
         <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
           <NotePreview />
