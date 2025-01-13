@@ -1,6 +1,5 @@
 'use client';
 
-import VideoBackground from '@/components/VideoBackground';
 import { TextField, Typography, styled } from '@mui/material';
 import { Button } from '@/components/ui/Button';
 import { useState } from 'react';
@@ -78,7 +77,7 @@ export default function ContactPage() {
 
   return (
     <div className="relative min-h-screen">
-      <VideoBackground />
+      
       <section className="container mx-auto px-4 relative z-10 py-12">
       <h1 className="text-4xl text-center mb-16">
       CONTACT
@@ -87,13 +86,11 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-8">
               <h2 className="text-3xl font-base mb-8">お問い合わせフォーム</h2>
-              <div className="space-y-4">
-                <p>Mail:unlabeling.contact@gmail.com</p>
-                <p>Instagram:@unlabeling___</p>
+             
                 <div className="mt-8">
                   <p>独立前のお仕事など当サイト掲載作品以外にもポートフォリオがございますのでお気軽にお問い合わせください。</p>
                 </div>
-              </div>
+              
             </div>
             
             <div>

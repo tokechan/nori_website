@@ -19,7 +19,7 @@ export default function Page() {
             />
             </div>
               <h2 className="text-3xl mb-8">
-              <div className="font-bold">
+              <div className="font-base">
               NORIKO
               </div>
               <p className="text-lg mb-6">
@@ -29,7 +29,6 @@ export default function Page() {
               Film Director<br />
               Creative Director<br />
               Motion Designer<br />
-              Content Creator<br />
               </p>
               </h2>
               <div className="col-span-1 md:col-span-2 text-xl mb-8">
@@ -66,47 +65,55 @@ export default function Page() {
               </p>
               </div>
           </div>
-          {/* {Special Interview Button} */}
-          <div className="mt-20 mb-20">
+
+      </section>
+
+      <section className="container mx-auto px-4 mb-12">
+      <h1 className="text-3xl font-base font-bold leading-tight  text-center mb-8 py-8">
+        Message
+      </h1>
+      <h2 className="text-2xl font-base leading-tight mb-12 text-center">
+        Turning passion into stories and ideas into impact
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <p className="mt-4 text-xl leading-relaxed text-left mb-12 ">
+      はじめまして。映像制作の場で、8年ほど広告やブランディングムービー、SNSコンテンツ制作の仕事をしてる、NORIKOです。
+      <br />   
+      私自身、周りから勝手に創られたイメージやラベリングによってすごく長い間苦しこで生きてきました。自身のつくる映像制作を通して、このラベルを剥がし「創造力の和でつくる新たな価値」を生み出していくことを信念に活動しています。   
+      <br />
+      クライアントワークでは、人、サービス、モノの想いと魅力を深堀り、「見えない価値」を発見し、心を動かす映像表現を武器にストーリーを紡ぎます。
+      <br />
+      そして、強いブランド力とファンづくりをサポートし、想像し続けることを決して諦めず想いの火を灯し合う一番の相棒となることを目指し伴走していきます。
+      </p>
+      <div className="relative h-[500px] overflow-hidden">
+            <Image
+              src="/images/aboutme.png"
+              alt="noriko image"
+              fill
+              className="object-cover rounded-xl"
+            />
+            </div>
+      <div className="col-span-1 md:col-span-2">
+        <p className="mt-4 text-xl leading-relaxed mb-12">
+        Hey there, I'm NORIKO! I've been in the video production for 8 years, crafting ads, branding videos, and social media content .
+        <br />
+        For years, I struggled with the labels and assumptions others imposed on me.
+        <br />
+        But through my work, I'm all about stripping away those labels and creating fresh value through the power of imagination and collaboration.
+        <br />
+        When working with clients, I dive deep into the heart of people, services, and products, uncovering the *hidden gems* that truly make them shine. With storytelling that moves hearts and video magic that sparks emotions, I bring their vision to life.
+        <br />
+        My mission is  help build strong brands, foster loyal fans, and keep that creative spark burning bright. I'm not just your video creator—I'm your ride-or-die partner, ready to walk alongside you as we dream big and make it happen.
+        </p>
+      </div>
+      </div>
+    
+              {/* {Special Interview Button} */}
+              <div className=" mb-20">
             <SpecialButton
              />
           </div>
-      </section>
-
-      <article className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-serif font-bold leading-tight  text-center mb-8 py-8">
-        Message
-      </h1>
-      <p className="mt-4">
-        はじめまして。
-        映像制作の場で、8年ほど広告や
-        ブランディングムービー、SNSコンテンツ制作の仕事をしてる、NORIKOです。
-        私たち人間は、無意識のうちに 物事においても、
-        人間関係においてもラベリングをして 行動する 事が
-        日常では当たり前 の 世界になっていますが
-        価値や個性を 他者に 決めつけられてしまい 、
-        苦しい 思い をする 人や 、使われ方が 決まってしまうものたちが いる のも 事実。
-        <br />
-        <br />
-        私自身も 周りから 勝手に 創られた
-        イメージやラベリングによって
-        すごく長い 間 苦しこで 生きてきました 。
-        自身の つくる 映像制作を 通して、このラベル を 剥がし
-        創造力の 和で つくる 新たな 価値 を 生み出して いくことを 信念に 活動して います。
-        <br />
-        <br />
-        クライアントワークでは、人、サービス、モノの 想い と魅力を 深堀り、
-        「 見えない価値 」を 発見し、心を 動かす 映像表現を 武器に ストーリー を 紡ぎます。
-        <br />
-        <br />
-        そして、強いブランド力 とファンづくりをサポートし、
-        想像し続けることを 決して 諦めず
-        想いの 火 を 灯し合う一 番の 相棒 となることを 目指し 伴走して いきます。
-        <br />
-        <br />
-        u n l a b e l i n g . c o n t a c t @ g m a i l . c o m
-      </p>
-    </article>
+    </section>
     </div>    
    )
   }
