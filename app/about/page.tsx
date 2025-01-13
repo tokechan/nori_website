@@ -15,7 +15,7 @@ export default function Page() {
               src="/images/aboutme.jpg"
               alt="noriko image"
               fill
-              className="object-contain animate-float"
+              className="object-contain"
             />
             </div>
               <h2 className="text-3xl mb-8">

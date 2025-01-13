@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 // ナビゲーションリンクを定数として分離
-const NAV_ITEMS = ['HOME', 'ABOUT', 'WORKS', 'WORKS_PLUS', 'PERSONAL', 'BLOG', 'CONTACT'] as const;
+const NAV_ITEMS = ['HOME', 'ABOUT', 'MEDIA','WORKS', 'WORKS_PLUS', 'PERSONAL', 'BLOG', 'CONTACT'] as const;
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
