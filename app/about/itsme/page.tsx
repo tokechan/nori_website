@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react'
 
 export default function ItsMe() {
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 py-16 font-noto-sans">
       <Link 
         href="/about"
         className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-12"
@@ -16,7 +16,7 @@ export default function ItsMe() {
     <article className="max-w-4xl mx-auto">
     {/* Introduction */}
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl text-center font-bold mb-16">
+        <h1 className="text-4xl text-center mb-16">
             It&apos;s me! Interview
             <br />
             <p className="text-sm"  >

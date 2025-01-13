@@ -43,7 +43,10 @@ export default function Footer() {
                 </Link>
               ))}
             </div>
-            <p className="text-sm">© 2024 UNLABELING</p>
+            <p className="text-sm">
+              © 2024 UNLABELING<br />
+              All rights reserved.
+            </p>
           </div>
         </div>
       </div>

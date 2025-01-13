@@ -80,13 +80,13 @@ export default function ContactPage() {
     <div className="relative min-h-screen">
       <VideoBackground />
       <section className="container mx-auto px-4 relative z-10 py-12">
-        <h1 className="text-4xl font-serif font-bold leading-tight mb-12 mt-12 text-center">
-          CONTACT
+      <h1 className="text-4xl text-center mb-16">
+      CONTACT
         </h1>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-8">
-              <h2 className="text-3xl font-bold mb-8">お問い合わせフォーム</h2>
+              <h2 className="text-3xl font-base mb-8">お問い合わせフォーム</h2>
               <div className="space-y-4">
                 <p>Mail:unlabeling.contact@gmail.com</p>
                 <p>Instagram:@unlabeling___</p>
