@@ -20,7 +20,7 @@ const projectVideos: VideoItem[] = projects.map(project => ({
 export default function Page() {
   return (
     <section className="container mx-auto px-4">
-      <h1 className="text-4xl font-serif font-bold leading-tight mb-12 text-center mt-12">
+      <h1 className="text-4xl font-base leading-tight mb-12 text-center mt-12">
         WORKS
       </h1>
       

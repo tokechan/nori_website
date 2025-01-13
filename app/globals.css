@@ -68,7 +68,15 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground overflow-x-hidden;
+    @apply bg-background text-foreground overflow-x-hidden font-sans;
+  }
+
+  .font-base {
+    font-family: var(--font-amiri);
+  }
+
+  .font-base:lang(ja) {
+    font-family: var(--font-notoSansJP);
   }
 }
 

@@ -1,17 +1,22 @@
 import './globals.css'
-import { EB_Garamond } from 'next/font/google'
+import { Amiri } from 'next/font/google'
+import { Noto_Sans_JP } from 'next/font/google'
 import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Script from 'next/script'
 import ScrollToTop from '../components/ScrollToTop'
 
-const garamond = EB_Garamond({
+const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
-  weight: ['400', '500'],
-  display: 'swap',
+  variable: '--font-notoSansJP',
 })
 
+const amiri = Amiri({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-amiri',
+})
 
 export const metadata: Metadata = {
   title: 'UNLABELING',
@@ -24,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja">
-      <body className={`${garamond.className} min-h-screen`}>
+    <html lang="ja" className={`${notoSansJP.variable} ${amiri.variable}`}>
+      <body className={`${notoSansJP.variable} ${amiri.variable} font-sans min-h-screen`}>
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-1">
