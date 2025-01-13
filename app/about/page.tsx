@@ -10,12 +10,12 @@ export default function Page() {
         ABOUT
         </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative aspect-square">
+            <div className="relative h-[500px] overflow-hidden">
             <Image
               src="/images/aboutme.jpg"
               alt="noriko image"
               fill
-              className="object-contain"
+              className="object-cover rounded-xl"
             />
             </div>
               <h2 className="text-3xl mb-8">

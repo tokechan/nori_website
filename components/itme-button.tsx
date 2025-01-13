@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 
 export function SpecialButton() {
   return (
@@ -11,8 +11,8 @@ export function SpecialButton() {
         <div className="text-xl">Special interview</div>
         <div className="text-sm text-gray-600">It&apos;s me! NORIKO</div>
       </div>
-      <div className="h-10 w-10 rounded-full bg-gray-900 text-white flex items-center justify-center">
-        <ArrowRight size={20} />
+      <div className="h-10 w-10 rounded-full bg-gray-800/50 hover:bg-gray-800/70 text-white flex items-center justify-center">
+        <ChevronRight size={20} />
       </div>
     </Link>
   )
