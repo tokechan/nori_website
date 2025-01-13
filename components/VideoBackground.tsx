@@ -18,6 +18,7 @@ export default function VideoBackground() {
                 autoPlay
                 loop
                 muted
+
                 className="w-full h-full object-cover opacity-40"
                 >
                     <source src="/videos/demo.mp4" type='video/mp4' />
