@@ -19,9 +19,9 @@ export default function VideoBackground() {
                 loop
                 muted
 
-                className="w-full h-full object-cover opacity-40"
+                className="w-full h-full object-cover "
                 >
-                    <source src="/videos/demo.mp4" type='video/mp4' />
+                    <source src="/videos/umimojiari.mp4" type='video/mp4' />
                 </video>
         </div>
     )
