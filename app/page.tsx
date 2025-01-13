@@ -7,18 +7,12 @@ export default function Home() {
     <div className="container mx-auto px-4">
       <section className="py-12">
         {/* new feature */}
-        <div className="grid grid-cols-1 gap-12 items-center">
+        <div className="grid grid-cols-1 items-center">
           <div>
-            <main className="min-h-screen">
-              <div className="space-y-40">
+            <main>
+              <div>
                 
-                  <div>
-                  <h1 className="text-4xl md:text-4xl font-bold font-serif text-center pb-12 mb-12">
-                    UNLABELING CREATIVE STUDIO
-                  </h1>
-                  <HeroCircle />
-                  </div>
-
+{/*                   
                   <div className="flex justify-center">
                     <h2 className="text-2xl md:text-3xl font-serif  text-left mb-12">
                       人もモノも見え方、捉え方、価値観は、<br />
@@ -32,7 +26,7 @@ export default function Home() {
                       していきたいという想いから<br />
                       『UNLABELING』と名付けました。<br />
                     </h2>
-                  </div>
+                  </div> */}
                 </div>
             </main>
           </div>
