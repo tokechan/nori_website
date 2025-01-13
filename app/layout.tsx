@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Script from 'next/script'
-import VideoBackground from '../components/VideoBackground'
+import ScrollToTop from '../components/ScrollToTop'
 
 const garamond = EB_Garamond({
   subsets: ['latin'],
@@ -26,17 +26,10 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${garamond.className} min-h-screen`}>
-        <div className="relative min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col">
           <Header />
-          <main className="flex-grow relative">
-            {/* 背景動画レイヤー */}
-            <div className="absolute inset-0 z-0 opacity-40">
-              <VideoBackground />
-            </div>
-            {/*メインコンテンツレイヤー*/}
-            <div className="relative z-10">
-              {children}
-            </div>
+          <main className="flex-1">
+            {children}
           </main>
           <Footer />
         </div>
@@ -44,6 +37,7 @@ export default function RootLayout({
           src="https://note.com/scripts/embed.js" 
           strategy="lazyOnload"
         />
+        <ScrollToTop />
       </body>
     </html>
   )

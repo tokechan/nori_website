@@ -1,6 +1,8 @@
 'use client';
 
-import { TextField, Button, Typography, styled } from '@mui/material';
+import VideoBackground from '@/components/VideoBackground';
+import { TextField, Typography, styled } from '@mui/material';
+import { Button } from '@/components/ui/Button';
 import { useState } from 'react';
 
 const StyledTextField = styled(TextField)({
@@ -14,7 +16,7 @@ const StyledTextField = styled(TextField)({
     borderBottomColor: '#000',
   },
   '& .MuiInputLabel-root': {
-    color: '#666',
+    color: '#000',
     fontSize: '0.9rem',
   },
   '& .MuiInput-root': {
@@ -22,9 +24,19 @@ const StyledTextField = styled(TextField)({
   },
 });
 
+// フォームのデータ構造を interface として定義
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
 export default function ContactPage() {
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
-  const [errors, setErrors] = useState({ name: '', email: '', subject: '', message: '' });
+  // 同じ構造のデータを複数の state で使用する際に、
+  // FormData という型を再利用できます
+  const [formData, setFormData] = useState<FormData>({ name: '', email: '', subject: '', message: '' });
+  const [errors, setErrors] = useState<FormData>({ name: '', email: '', subject: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -32,7 +44,8 @@ export default function ContactPage() {
   };
 
   const validateInput = () => {
-    const newErrors: { name: string; email: string; subject: string; message: string } = {
+    // ここでも同じ型を使用できます
+    const newErrors: FormData = {
       name: '',
       email: '',
       subject: '',
@@ -64,24 +77,25 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="content-wrapper">
-      <article className="article-container">
-        <h1 className="text-4xl font-serif font-bold leading-tight mt-12 mb-12 text-center">CONTACT</h1>
+    <div className="relative min-h-screen">
+      <VideoBackground />
+      <section className="container mx-auto px-4 relative z-10 py-12">
+        <h1 className="text-4xl font-serif font-bold leading-tight mb-12 mt-12 text-center">
+          CONTACT
+        </h1>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-8">
-              <h1 className="text-4xl font-bold mb-8">お問い合わせフォーム</h1>
+              <h2 className="text-3xl font-bold mb-8">お問い合わせフォーム</h2>
               <div className="space-y-4">
-                <p>Mail: unlabeling.contact@gmail.com</p>
-                <p>Instagram: @unlabeling___</p>
+                <p>Mail:unlabeling.contact@gmail.com</p>
+                <p>Instagram:@unlabeling___</p>
                 <div className="mt-8">
-                  <p>独立前のお仕事など</p>
-                  <p>当サイト掲載作品以外にも</p>
-                  <p>ポートフォリオがございますので</p>
-                  <p>お気軽にお問い合わせください。</p>
+                  <p>独立前のお仕事など当サイト掲載作品以外にもポートフォリオがございますのでお気軽にお問い合わせください。</p>
                 </div>
               </div>
             </div>
+            
             <div>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <StyledTextField
@@ -125,20 +139,24 @@ export default function ContactPage() {
                 <div className="flex justify-end">
                   <Button
                     type="submit"
-                    variant="contained"
                     disabled={status === 'submitting'}
-                    className="bg-gray-100 text-black shadow-none rounded-none px-8 py-2"
+                    variant="default"
+                    size="lg"
                   >
                     {status === 'submitting' ? '送信中...' : '送信する'}
                   </Button>
                 </div>
-                {status === 'success' && <Typography color="green">メッセージが送信されました！</Typography>}
-                {status === 'error' && <Typography color="red">エラーが発生しました。再試行してください。</Typography>}
+                {status === 'success' && (
+                  <Typography className="text-green-600">メッセージが送信されました！</Typography>
+                )}
+                {status === 'error' && (
+                  <Typography className="text-red-600">エラーが発生しました。再試行してください。</Typography>
+                )}
               </form>
             </div>
           </div>
         </div>
-      </article>
+      </section>
     </div>
   );
 }

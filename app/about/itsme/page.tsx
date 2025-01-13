@@ -228,7 +228,7 @@ export default function ItsMe() {
             <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=1234567890"
+            src="https://www.youtube.com/embed/q2kx-e29wRk"
             title="Factory Tour Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

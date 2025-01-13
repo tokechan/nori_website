@@ -1,18 +1,21 @@
-import HeroCircle from '../components/ui/hero-circle'
+import VideoBackground from '../components/VideoBackground'
 
 
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="container mx-auto px-4">
-      <section className="py-12">
-        {/* new feature */}
-        <div className="grid grid-cols-1 items-center">
-          <div>
-            <main>
+    <main className="relative min-h-[calc(100vh-160px)]">
+      <div className="absolute inset-0 z-0 opacity-40">
+        <VideoBackground />
+      </div>
+      <div className="relative z-10 h-full">
+        <div className="container mx-auto px-4">
+          <section className="py-12">
+            {/* new feature */}
+            <div className="grid grid-cols-1 items-center">
               <div>
-                
-{/*                   
+                <main>
+                  <div>
+                    {/*                   
                   <div className="flex justify-center">
                     <h2 className="text-2xl md:text-3xl font-serif  text-left mb-12">
                       人もモノも見え方、捉え方、価値観は、<br />
@@ -27,11 +30,13 @@ export default function Home() {
                       『UNLABELING』と名付けました。<br />
                     </h2>
                   </div> */}
-                </div>
-            </main>
-          </div>
-        </div> 
-      </section>
-    </div>
+                  </div>
+                </main>
+              </div>
+            </div> 
+          </section>
+        </div>
+      </div>
+    </main>
   )
 }
