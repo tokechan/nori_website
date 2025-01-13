@@ -99,7 +99,7 @@ export default function Page() {
             </div>
       <div className="col-span-1 md:col-span-2">
         <p className="mt-4 text-xl leading-relaxed mb-12">
-        Hey there, I&quot;m NORIKO! I&apos;ve been in the video production for 8 years, crafting ads, branding videos, and social media content .
+          Hey there, I&apos;m NORIKO! I&apos;ve been in the video production for 8 years, crafting ads, branding videos, and social media content .
         <br />
         For years, I struggled with the labels and assumptions others imposed on me.
         <br />
@@ -107,7 +107,7 @@ export default function Page() {
         <br />
         When working with clients, I dive deep into the heart of people, services, and products, uncovering the *hidden gems* that truly make them shine. With storytelling that moves hearts and video magic that sparks emotions, I bring their vision to life.
         <br />
-        My mission is  help build strong brands, foster loyal fans, and keep that creative spark burning bright. I'm not just your video creator—I'm your ride-or-die partner, ready to walk alongside you as we dream big and make it happen.
+        My mission is  help build strong brands, foster loyal fans, and keep that creative spark burning bright. I&apos;m not just your video creator—I&apos;m your ride-or-die partner, ready to walk alongside you as we dream big and make it happen.
         </p>
       </div>
       </div>
