@@ -77,7 +77,7 @@ export default function ContactPage() {
 
   return (
     <div className="relative min-h-screen">
-      
+
       <section className="container mx-auto px-4 relative z-10 py-12">
       <h1 className="text-4xl text-center mb-16">
       CONTACT
@@ -86,11 +86,13 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-8">
               <h2 className="text-3xl font-base mb-8">お問い合わせフォーム</h2>
+
              
                 <div className="mt-8">
                   <p>独立前のお仕事など当サイト掲載作品以外にもポートフォリオがございますのでお気軽にお問い合わせください。</p>
                 </div>
               
+
             </div>
             
             <div>

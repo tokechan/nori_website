@@ -19,7 +19,9 @@ export default function Page() {
             />
             </div>
               <h2 className="text-3xl mb-8">
+
               <div className="font-base">
+
               NORIKO
               </div>
               <p className="text-lg mb-6">
@@ -29,6 +31,8 @@ export default function Page() {
               Film Director<br />
               Creative Director<br />
               Motion Designer<br />
+
+
               </p>
               </h2>
               <div className="col-span-1 md:col-span-2 text-xl mb-8">
@@ -114,6 +118,7 @@ export default function Page() {
              />
           </div>
     </section>
+
     </div>    
    )
   }

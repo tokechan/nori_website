@@ -9,7 +9,9 @@ export default function ItsMe() {
     <article className="max-w-4xl mx-auto">
     {/* Introduction */}
       <div className="max-w-3xl mx-auto">
+
         <h1 className="text-4xl text-center mb-16">
+
             It&apos;s me! Interview
             <br />
             <p className="text-sm"  >

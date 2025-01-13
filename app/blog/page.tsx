@@ -6,7 +6,9 @@ export default function BlogPage() {
   return (    
     <section className="page-container">
       {/* 背景レイヤー */}
+
       <div className="absolute inset-0 z-0 ">
+
         <VideoBackground />
       </div>
       {/* コンテンツレイヤー */}
