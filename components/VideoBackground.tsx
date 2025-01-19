@@ -39,7 +39,7 @@ export default function VideoBackground() {
                 loop
                 muted
                 playsInline
-                className="w-auto h-full object-cover min-w-full md:object-[center_center] object-[50%_center]"
+                className="w-auto h-full object-cover min-w-full md:object-[center_center] object-[50%_center] md:scale-100 scale-[1.2]"
             >
                 <source src="/videos/umimojiari.mp4" type='video/mp4' />
             </video>
