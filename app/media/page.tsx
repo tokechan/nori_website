@@ -12,7 +12,7 @@ export default function ItsMe() {
 
         <h1 className="text-4xl text-center mb-16">
 
-            It&apos;s me! Interview
+            Special Interview
             <br />
             <p className="text-sm"  >
             写真と文：七緒

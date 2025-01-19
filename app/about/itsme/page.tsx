@@ -17,8 +17,8 @@ export default function ItsMe() {
     {/* Introduction */}
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl text-center mb-16">
-            It&apos;s me! Interview
-            <br />
+          Special Interview
+          <br />
             <p className="text-sm"  >
             写真と文：七緒
             </p>
