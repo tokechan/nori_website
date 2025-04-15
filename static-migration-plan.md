@@ -1,5 +1,12 @@
 # Next.js サイトからS3+CloudFrontへの段階的移行計画
 正直まだ迷っている。。。。。
+構成を変更します！！！
+フロントエンド	Next.js（App Router / SSG）
+バックエンド（API）	Next.js API Routes（Node.js）※別サーバーで実行
+データベース	Neon（PostgreSQL）
+ホスティング	S3（静的ファイル） + CloudFront（CDN）
+デプロイ	GitHub Actions で S3 に自動アップロード
+
 ## 背景
 
 現在のNext.jsウェブサイト「UNLABELING」をより費用効率の高いS3+CloudFront構成に移行するための段階的な計画です。この移行により、SSRからSSGへの変更が必要となりますが、低コストで高性能な静的ウェブサイトホスティングが可能になります。
