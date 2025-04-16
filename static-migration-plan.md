@@ -1,6 +1,9 @@
 # Next.js サイトからS3+CloudFrontへの段階的移行計画
 正直まだ迷っている。。。。。
 構成を変更します！！！
+
+本日更新！！！
+
 フロントエンド	Next.js（App Router / SSG）
 バックエンド（API）	Next.js API Routes（Node.js）※別サーバーで実行
 データベース	Neon（PostgreSQL）
