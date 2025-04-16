@@ -3,6 +3,7 @@
 構成を変更します！！！
 
 本日更新！！！
+要件を再度ヒアリングした！！！！！
 
 フロントエンド	Next.js（App Router / SSG）
 バックエンド（API）	Next.js API Routes（Node.js）※別サーバーで実行
